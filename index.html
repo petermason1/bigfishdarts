@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigFish Darts - Interactive Darts Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 BigFish Darts</h1>
+            <p class="subtitle">Interactive darts gaming with real-time video</p>
+        </header>
+
+        <main>
+            <div class="game-room">
+                <h2>Game Room</h2>
+                
+                <div class="game-grid">
+                    <!-- Video Feed -->
+                    <div class="video-feed">
+                        <div class="video-placeholder">
+                            <p>📹 Video feed will appear here</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Scoreboard -->
+                    <div class="scoreboard">
+                        <h3>Scoreboard</h3>
+                        <div class="scores">
+                            <div class="player-score">
+                                <span class="player-name">Player 1</span>
+                                <span class="score">501</span>
+                            </div>
+                            <div class="player-score">
+                                <span class="player-name">Player 2</span>
+                                <span class="score">501</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="start-button" onclick="startGame()">Start Game</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
