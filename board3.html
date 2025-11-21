@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Prize Board - BigFish Darts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">🎯 BigFish Darts</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Dart Board</a></li>
+                <li><a href="board2.html" class="nav-link">Bullseye Quiz</a></li>
+                <li><a href="board3.html" class="nav-link active">Prize Board</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🎯 BigFish Darts</h1>
+            <p class="subtitle">Interactive darts gaming with real-time video</p>
+        </header>
+
+        <main>
+            <div class="game-room">
+                <h2>🎁 Special Prize Board</h2>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.9;">Hit the target to win amazing prizes!</p>
+                
+                <div class="prize-container">
+                    <div class="prize-board">
+                        <div class="prize-center">
+                            <div class="prize-jackpot">🎁 JACKPOT 🎁</div>
+                            <div class="prize-amount">£500</div>
+                        </div>
+                        <div class="prize-rings">
+                            <div class="prize-ring prize-1">
+                                <div class="prize-label">Free Darts Set</div>
+                            </div>
+                            <div class="prize-ring prize-2">
+                                <div class="prize-label">£50 Voucher</div>
+                            </div>
+                            <div class="prize-ring prize-3">
+                                <div class="prize-label">£25 Voucher</div>
+                            </div>
+                            <div class="prize-ring prize-4">
+                                <div class="prize-label">£10 Voucher</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prize-info">
+                        <h3>Your Prizes</h3>
+                        <div class="prize-list" id="prizeList">
+                            <p style="opacity: 0.7;">Hit the board to win prizes!</p>
+                        </div>
+                        <button class="prize-spin" onclick="spinPrize()">🎯 Spin for Prize</button>
+                    </div>
+                </div>
+
+                <div class="game-grid">
+                    <div class="video-feed">
+                        <div class="video-placeholder">
+                            <p>📹 Video feed will appear here</p>
+                        </div>
+                    </div>
+                    
+                    <div class="scoreboard">
+                        <h3>Prize History</h3>
+                        <div class="scores">
+                            <div class="player-score">
+                                <span class="player-name">Total Prizes</span>
+                                <span class="score" id="totalPrizes">0</span>
+                            </div>
+                            <div class="player-score">
+                                <span class="player-name">Best Prize</span>
+                                <span class="score" id="bestPrize">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="start-button" onclick="resetPrizes()">Reset Board</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const prizes = [
+            { name: "🎁 JACKPOT - £500", value: 500 },
+            { name: "Free Darts Set", value: 50 },
+            { name: "£50 Voucher", value: 50 },
+            { name: "£25 Voucher", value: 25 },
+            { name: "£10 Voucher", value: 10 },
+            { name: "Try Again", value: 0 }
+        ];
+
+        let totalPrizes = 0;
+        let bestPrize = 0;
+        let prizeHistory = [];
+
+        function spinPrize() {
+            const random = Math.floor(Math.random() * prizes.length);
+            const prize = prizes[random];
+            
+            prizeHistory.push(prize);
+            totalPrizes += prize.value;
+            if (prize.value > bestPrize) {
+                bestPrize = prize.value;
+            }
+
+            updatePrizeDisplay();
+            animatePrizeWin(prize);
+        }
+
+        function updatePrizeDisplay() {
+            const prizeList = document.getElementById('prizeList');
+            const recentPrizes = prizeHistory.slice(-5).reverse();
+            
+            prizeList.innerHTML = recentPrizes.map(p => 
+                `<div class="prize-item">${p.name} ${p.value > 0 ? '£' + p.value : ''}</div>`
+            ).join('') || '<p style="opacity: 0.7;">Hit the board to win prizes!</p>';
+
+            document.getElementById('totalPrizes').textContent = '£' + totalPrizes;
+            document.getElementById('bestPrize').textContent = bestPrize > 0 ? '£' + bestPrize : '-';
+        }
+
+        function animatePrizeWin(prize) {
+            const spinBtn = document.querySelector('.prize-spin');
+            spinBtn.textContent = prize.value > 0 ? `🎉 Won: ${prize.name}!` : '😔 Try Again!';
+            spinBtn.style.background = prize.value > 0 ? '#4ade80' : '#ef4444';
+            
+            setTimeout(() => {
+                spinBtn.textContent = '🎯 Spin for Prize';
+                spinBtn.style.background = 'var(--union-red)';
+            }, 2000);
+        }
+
+        function resetPrizes() {
+            totalPrizes = 0;
+            bestPrize = 0;
+            prizeHistory = [];
+            updatePrizeDisplay();
+        }
+    </script>
+</body>
+</html>

@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">🎯 BigFish Darts</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Dart Board</a></li>
+                <li><a href="board2.html" class="nav-link">Bullseye Quiz</a></li>
+                <li><a href="board3.html" class="nav-link">Prize Board</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <h1>🎯 BigFish Darts</h1>
@@ -15,8 +26,27 @@
 
         <main>
             <div class="game-room">
-                <h2>Game Room</h2>
+                <h2>Dart Board</h2>
+                <p style="text-align: center; margin-bottom: 1rem; opacity: 0.9;">Standard 501 game - Hit the numbers to reduce your score!</p>
                 
+                <div class="board-container">
+                    <div class="dartboard classic-board">
+                        <div class="board-center">
+                            <div class="bullseye">BULL</div>
+                        </div>
+                        <div class="board-rings">
+                            <div class="ring triple"></div>
+                            <div class="ring double"></div>
+                        </div>
+                        <div class="board-numbers">
+                            <span>20</span><span>1</span><span>18</span><span>4</span><span>13</span>
+                            <span>6</span><span>10</span><span>15</span><span>2</span><span>17</span>
+                            <span>3</span><span>19</span><span>7</span><span>16</span><span>8</span>
+                            <span>11</span><span>14</span><span>9</span><span>12</span><span>5</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="game-grid">
                     <!-- Video Feed -->
                     <div class="video-feed">
@@ -49,4 +79,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

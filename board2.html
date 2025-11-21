@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullseye Quiz Round - BigFish Darts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">🎯 BigFish Darts</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Dart Board</a></li>
+                <li><a href="board2.html" class="nav-link active">Bullseye Quiz</a></li>
+                <li><a href="board3.html" class="nav-link">Prize Board</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🎯 BigFish Darts</h1>
+            <p class="subtitle">Interactive darts gaming with real-time video</p>
+        </header>
+
+        <main>
+            <div class="game-room">
+                <h2>🎯 Bullseye Quiz Round</h2>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.9;">Answer questions correctly to hit the bullseye and win points!</p>
+                
+                <div class="quiz-container">
+                    <div class="quiz-board">
+                        <div class="quiz-center">
+                            <div class="quiz-bullseye">?</div>
+                            <div class="quiz-score">Score: <span id="quizScore">0</span></div>
+                        </div>
+                        <div class="quiz-rings">
+                            <div class="quiz-ring ring-1">100</div>
+                            <div class="quiz-ring ring-2">50</div>
+                            <div class="quiz-ring ring-3">25</div>
+                            <div class="quiz-ring ring-4">10</div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3 id="questionText">Loading question...</h3>
+                        <div class="quiz-options" id="quizOptions">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+                        <button class="quiz-next" onclick="nextQuestion()" style="display: none;">Next Question</button>
+                    </div>
+                </div>
+
+                <div class="game-grid">
+                    <div class="video-feed">
+                        <div class="video-placeholder">
+                            <p>📹 Video feed will appear here</p>
+                        </div>
+                    </div>
+                    
+                    <div class="scoreboard">
+                        <h3>Quiz Leaderboard</h3>
+                        <div class="scores">
+                            <div class="player-score">
+                                <span class="player-name">Player 1</span>
+                                <span class="score" id="player1Score">0</span>
+                            </div>
+                            <div class="player-score">
+                                <span class="player-name">Player 2</span>
+                                <span class="score" id="player2Score">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="start-button" onclick="startQuiz()">Start Quiz Round</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let currentQuestion = 0;
+        let quizScore = 0;
+        let player1Score = 0;
+        let player2Score = 0;
+
+        const questions = [
+            {
+                question: "What is the highest score you can get with a single dart?",
+                options: ["50", "60", "20", "25"],
+                correct: 1
+            },
+            {
+                question: "How many points is a bullseye worth?",
+                options: ["25", "50", "100", "75"],
+                correct: 1
+            },
+            {
+                question: "What is the standard starting score in a game of 501?",
+                options: ["301", "501", "701", "401"],
+                correct: 1
+            },
+            {
+                question: "What is the outer ring called?",
+                options: ["Double", "Triple", "Single", "Bull"],
+                correct: 0
+            },
+            {
+                question: "How many segments are on a standard dartboard?",
+                options: ["18", "20", "22", "24"],
+                correct: 1
+            }
+        ];
+
+        function startQuiz() {
+            currentQuestion = 0;
+            quizScore = 0;
+            document.getElementById('quizScore').textContent = '0';
+            document.querySelector('.quiz-next').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestion >= questions.length) {
+                document.getElementById('questionText').textContent = 'Quiz Complete! Final Score: ' + quizScore;
+                document.getElementById('quizOptions').innerHTML = '';
+                return;
+            }
+
+            const q = questions[currentQuestion];
+            document.getElementById('questionText').textContent = q.question;
+            
+            const optionsHtml = q.options.map((opt, idx) => 
+                `<button class="quiz-option" onclick="selectAnswer(${idx})">${opt}</button>`
+            ).join('');
+            
+            document.getElementById('quizOptions').innerHTML = optionsHtml;
+            document.querySelector('.quiz-next').style.display = 'none';
+        }
+
+        function selectAnswer(selected) {
+            const q = questions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            options.forEach((opt, idx) => {
+                opt.disabled = true;
+                if (idx === q.correct) {
+                    opt.style.background = '#4ade80';
+                } else if (idx === selected && idx !== q.correct) {
+                    opt.style.background = '#ef4444';
+                }
+            });
+
+            if (selected === q.correct) {
+                quizScore += 50;
+                document.getElementById('quizScore').textContent = quizScore;
+                player1Score += 50;
+                document.getElementById('player1Score').textContent = player1Score;
+            }
+
+            document.querySelector('.quiz-next').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            showQuestion();
+        }
+    </script>
+</body>
+</html>
