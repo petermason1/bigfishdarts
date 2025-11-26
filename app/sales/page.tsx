@@ -16,6 +16,7 @@ export default function SalesPage() {
             <li><Link href="/demo" className="nav-link">Demo</Link></li>
             <li><Link href="/sales" className="nav-link active">Pricing</Link></li>
             <li><Link href="/comp" className="nav-link">Competition</Link></li>
+            <li><Link href="/coaching" className="nav-link">Coaching</Link></li>
           </ul>
         </div>
       </nav>
