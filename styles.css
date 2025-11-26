@@ -19,27 +19,102 @@ body {
     color: var(--union-white);
 }
 
-/* Navigation */
+/* Navigation - Dartboard Double Bed Style with Felt Texture */
 .nav {
-    background: linear-gradient(135deg, rgba(0, 48, 130, 0.98) 0%, rgba(0, 31, 92, 0.98) 100%);
-    backdrop-filter: blur(20px);
-    border-bottom: 3px solid var(--union-red);
+    background: 
+        /* Felt texture */
+        repeating-linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.1) 0px,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 1px,
+            transparent 2px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0, 0, 0, 0.1) 0px,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 1px,
+            transparent 2px
+        ),
+        /* Red felt base */
+        linear-gradient(135deg, 
+            rgba(220, 20, 60, 0.95) 0%, 
+            rgba(200, 20, 50, 0.95) 25%,
+            rgba(220, 20, 60, 0.95) 50%,
+            rgba(200, 20, 50, 0.95) 75%,
+            rgba(220, 20, 60, 0.95) 100%
+        ),
+        /* Base red */
+        var(--union-red);
+    backdrop-filter: blur(5px);
     padding: 1.2rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.4), 0 2px 10px rgba(220, 20, 60, 0.2);
+    box-shadow: 
+        0 2px 20px rgba(0,0,0,0.6),
+        inset 0 1px 3px rgba(255, 255, 255, 0.15),
+        inset 0 -1px 3px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(90deg, 
+        #8B7355 0%, 
+        #A0826D 10%, 
+        #B8956F 20%, 
+        #C9A882 30%, 
+        #D4B896 40%, 
+        #C9A882 50%, 
+        #B8956F 60%, 
+        #A0826D 70%, 
+        #8B7355 80%, 
+        #7A6348 90%, 
+        #8B7355 100%
+    ) 1;
+    position: relative;
 }
 
+/* Metal wire border effect */
 .nav::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.5), transparent);
+    bottom: 0;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg,
+        rgba(139, 115, 85, 0.9) 0%,
+        rgba(184, 149, 111, 0.95) 25%,
+        rgba(212, 184, 150, 1) 50%,
+        rgba(184, 149, 111, 0.95) 75%,
+        rgba(139, 115, 85, 0.9) 100%
+    ) 1;
+    pointer-events: none;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.nav::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(212, 184, 150, 0.6) 20%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(212, 184, 150, 0.6) 80%,
+        transparent 100%
+    );
+    pointer-events: none;
 }
 
 .nav-container {
@@ -51,6 +126,31 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure nav items don't wrap */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .nav-menu {
+        gap: 1.2rem;
+    }
+    
+    .nav-link {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.92rem;
+    }
 }
 
 @media (max-width: 640px) {
@@ -69,37 +169,62 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--union-white);
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6), 0 0 10px rgba(220, 20, 60, 0.3);
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.8),
+        0 0 8px rgba(220, 20, 60, 0.4),
+        -1px -1px 2px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     gap: 0.75rem;
     position: relative;
     transition: transform 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 0.1),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nav-logo:hover {
     transform: translateX(3px);
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7), 0 0 15px rgba(220, 20, 60, 0.5);
+    text-shadow: 
+        2px 2px 6px rgba(0,0,0,0.9),
+        0 0 12px rgba(220, 20, 60, 0.6),
+        -1px -1px 3px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        inset 0 1px 3px rgba(255, 255, 255, 0.15),
+        inset 0 -1px 3px rgba(0, 0, 0, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .logo-image {
     height: 50px;
     width: auto;
     object-fit: contain;
-    border-radius: 8px;
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 10px rgba(220, 20, 60, 0.3));
+    border-radius: 6px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
     transition: all 0.3s ease;
-    border: 2px solid rgba(220, 20, 60, 0.3);
-    padding: 2px;
-    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(139, 115, 85, 0.6);
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 0.2),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .logo-image:hover {
-    transform: scale(1.08) rotate(2deg);
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 15px rgba(220, 20, 60, 0.5));
-    border-color: rgba(220, 20, 60, 0.6);
+    transform: scale(1.05);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.7));
+    border-color: rgba(212, 184, 150, 0.8);
+    box-shadow: 
+        inset 0 1px 3px rgba(255, 255, 255, 0.3),
+        inset 0 -1px 3px rgba(0, 0, 0, 0.5),
+        0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .logo-text {
@@ -125,13 +250,38 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: linear-gradient(180deg, rgba(0, 48, 130, 0.98) 0%, rgba(0, 31, 92, 0.98) 100%);
-        backdrop-filter: blur(20px);
+        background: 
+            repeating-linear-gradient(
+                0deg,
+                rgba(220, 20, 60, 0.15) 0px,
+                rgba(220, 20, 60, 0.15) 2px,
+                rgba(0, 48, 130, 0.2) 2px,
+                rgba(0, 48, 130, 0.2) 4px
+            ),
+            linear-gradient(180deg, rgba(220, 20, 60, 0.25) 0%, rgba(0, 48, 130, 0.3) 50%, rgba(220, 20, 60, 0.25) 100%);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         gap: 0;
         padding: 0;
-        border-top: 3px solid var(--union-red);
-        box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 20px rgba(220, 20, 60, 0.3);
+        border-top: 4px solid;
+        border-bottom: 4px solid;
+        border-image: linear-gradient(90deg, 
+            #8B7355 0%, 
+            #A0826D 10%, 
+            #B8956F 20%, 
+            #C9A882 30%, 
+            #D4B896 40%, 
+            #C9A882 50%, 
+            #B8956F 60%, 
+            #A0826D 70%, 
+            #8B7355 80%, 
+            #7A6348 90%, 
+            #8B7355 100%
+        ) 1;
+        box-shadow: 
+            0 10px 40px rgba(0,0,0,0.6),
+            inset 0 2px 5px rgba(255, 255, 255, 0.1),
+            inset 0 -2px 5px rgba(0, 0, 0, 0.3);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease, padding 0.4s ease;
@@ -152,9 +302,16 @@ body {
         padding: 1.2rem 2rem;
         width: 100%;
         border-radius: 0;
-        border-left: 4px solid transparent;
+        border-left: 3px solid;
+        border-image: linear-gradient(180deg,
+            rgba(139, 115, 85, 0.9) 0%,
+            rgba(212, 184, 150, 1) 50%,
+            rgba(139, 115, 85, 0.9) 100%
+        ) 1;
         margin: 0.25rem 0;
         transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
     }
     
     .nav-link::before {
@@ -163,15 +320,20 @@ body {
     
     .nav-link:hover {
         border-left-color: var(--union-red);
-        background: linear-gradient(90deg, rgba(220, 20, 60, 0.2) 0%, rgba(220, 20, 60, 0.05) 100%);
+        background: linear-gradient(90deg, rgba(220, 20, 60, 0.25) 0%, rgba(220, 20, 60, 0.1) 100%);
         padding-left: 2.5rem;
         transform: translateX(5px);
+        box-shadow: 
+            inset 0 1px 3px rgba(255, 255, 255, 0.15),
+            inset 4px 0 8px rgba(220, 20, 60, 0.3);
     }
     
     .nav-link.active {
         border-left-color: var(--union-red);
-        background: linear-gradient(90deg, rgba(220, 20, 60, 0.3) 0%, rgba(220, 20, 60, 0.1) 100%);
-        box-shadow: inset 4px 0 10px rgba(220, 20, 60, 0.4);
+        background: linear-gradient(90deg, rgba(220, 20, 60, 0.35) 0%, rgba(220, 20, 60, 0.15) 100%);
+        box-shadow: 
+            inset 0 2px 4px rgba(255, 255, 255, 0.2),
+            inset 4px 0 12px rgba(220, 20, 60, 0.5);
     }
 }
 
@@ -200,9 +362,16 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.nav-menu li {
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 /* Desktop: hide hamburger, show menu */
@@ -220,11 +389,18 @@ body {
     }
 }
 
-/* Hamburger Menu Button - Target Icon */
+/* Hamburger Menu Button - Target Icon with Metal Wire Border */
 .nav-toggle {
     display: none;
-    background: linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(0, 48, 130, 0.3) 100%);
-    border: 2px solid var(--union-white);
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid;
+    border-image: linear-gradient(135deg,
+        rgba(139, 115, 85, 0.9) 0%,
+        rgba(184, 149, 111, 0.95) 25%,
+        rgba(212, 184, 150, 1) 50%,
+        rgba(184, 149, 111, 0.95) 75%,
+        rgba(139, 115, 85, 0.9) 100%
+    ) 1;
     border-radius: 50%;
     cursor: pointer;
     padding: 0;
@@ -234,35 +410,49 @@ body {
     align-items: center;
     transition: all 0.3s ease;
     position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 3px 10px rgba(0, 0, 0, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(139, 115, 85, 0.5);
 }
 
 .nav-toggle::before {
     content: '';
     position: absolute;
-    inset: -2px;
+    inset: -1px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--union-red), var(--union-blue));
+    background: linear-gradient(135deg, 
+        rgba(212, 184, 150, 0.3) 0%,
+        rgba(184, 149, 111, 0.2) 50%,
+        rgba(212, 184, 150, 0.3) 100%
+    );
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1;
 }
 
 .nav-toggle:hover {
-    background: linear-gradient(135deg, rgba(220, 20, 60, 0.4) 0%, rgba(0, 48, 130, 0.5) 100%);
-    border-color: var(--union-red);
+    background: rgba(220, 20, 60, 0.2);
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 15px rgba(220, 20, 60, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.25),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(212, 184, 150, 0.7);
 }
 
 .nav-toggle:hover::before {
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .nav-toggle.active {
-    background: linear-gradient(135deg, var(--union-red) 0%, rgba(220, 20, 60, 0.8) 100%);
-    border-color: var(--union-red);
-    box-shadow: 0 6px 25px rgba(220, 20, 60, 0.6), inset 0 2px 8px rgba(255, 255, 255, 0.3);
+    background: rgba(220, 20, 60, 0.3);
+    box-shadow: 
+        0 5px 20px rgba(220, 20, 60, 0.5),
+        inset 0 3px 6px rgba(255, 255, 255, 0.3),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(212, 184, 150, 0.8);
 }
 
 .target-icon {
@@ -270,25 +460,34 @@ body {
     display: block;
     transition: all 0.3s ease;
     line-height: 1;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
 }
 
 .nav-toggle.active .target-icon {
     transform: rotate(180deg) scale(1.2);
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.7)) brightness(1.2);
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.8)) brightness(1.2);
 }
 
 .nav-link {
     color: var(--union-white);
     text-decoration: none;
     font-weight: 600;
-    padding: 0.6rem 1.2rem;
-    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 1px solid rgba(139, 115, 85, 0.4);
     position: relative;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 
+        1px 1px 2px rgba(0,0,0,0.8),
+        0 0 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.3px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 0.15),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 .nav-link::before {
@@ -299,16 +498,23 @@ body {
     transform: translateX(-50%) scaleX(0);
     width: 80%;
     height: 2px;
-    background: var(--union-red);
+    background: linear-gradient(90deg, transparent, var(--union-red), transparent);
     transition: transform 0.3s ease;
     border-radius: 2px;
+    box-shadow: 0 0 8px rgba(220, 20, 60, 0.6);
 }
 
 .nav-link:hover {
-    background: rgba(220, 20, 60, 0.25);
-    border-color: rgba(220, 20, 60, 0.5);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    background: rgba(220, 20, 60, 0.2);
+    border-color: rgba(212, 184, 150, 0.6);
+    transform: translateY(-1px);
+    box-shadow: 
+        inset 0 1px 3px rgba(255, 255, 255, 0.15),
+        inset 0 -1px 3px rgba(0, 0, 0, 0.4),
+        0 3px 6px rgba(220, 20, 60, 0.3);
+    text-shadow: 
+        1px 1px 3px rgba(0,0,0,0.9),
+        0 0 6px rgba(220, 20, 60, 0.5);
 }
 
 .nav-link:hover::before {
@@ -316,10 +522,16 @@ body {
 }
 
 .nav-link.active {
-    background: linear-gradient(135deg, var(--union-red) 0%, rgba(220, 20, 60, 0.9) 100%);
-    border-color: var(--union-red);
-    box-shadow: 0 4px 20px rgba(220, 20, 60, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.4) 0%, rgba(220, 20, 60, 0.3) 100%);
+    border-color: rgba(212, 184, 150, 0.8);
+    box-shadow: 
+        0 3px 8px rgba(220, 20, 60, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4);
     transform: translateY(-1px);
+    text-shadow: 
+        1px 1px 3px rgba(0,0,0,0.9),
+        0 0 8px rgba(220, 20, 60, 0.6);
 }
 
 .nav-link.active::before {
