@@ -64,3 +64,4 @@ After adding your logo:
 ### Want logo only (no text)?
 Remove the `<span className="logo-text">` element from navigation
 
+

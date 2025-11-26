@@ -81,3 +81,4 @@ If you have ImageMagick, I can create a script to generate all icons at once. Ju
 
 The metadata is already configured in `app/layout.tsx` - just need the actual icon files.
 
+

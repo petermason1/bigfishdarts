@@ -122,3 +122,4 @@ await emailjs.send(
 
 Choose an email service and follow the setup instructions above. Resend is recommended for simplicity and free tier.
 
+

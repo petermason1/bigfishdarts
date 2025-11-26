@@ -41,3 +41,4 @@ echo ""
 echo "📁 Files are in the public/ folder"
 echo "🔄 Restart your Next.js server to see the icons"
 
+
