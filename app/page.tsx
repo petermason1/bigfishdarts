@@ -22,11 +22,12 @@ export default function Home() {
     }
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // FormSubmit.co handles the submission automatically
     // Form will submit to FormSubmit.co which sends email to Info.bigfishdarts@gmail.com
-    // No need to preventDefault - let the form submit naturally
+    // Don't preventDefault - let the form submit naturally to FormSubmit.co
     // FormSubmit will redirect back to our page with ?submitted=true
+    // The form action and method are set in the form element below
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
