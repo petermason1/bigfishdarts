@@ -1537,6 +1537,17 @@ header h1 {
         margin-bottom: 2rem;
     }
     
+    .hero-logo {
+        max-width: 120px;
+        max-height: 190px;
+        padding: 0.5rem;
+        border-width: 2px;
+    }
+    
+    .hero-logo-container {
+        margin-bottom: 1rem;
+    }
+    
     .signup-title {
         font-size: 1.8rem;
         line-height: 1.2;
@@ -2077,6 +2088,16 @@ header h1 {
 }
 
 @media (max-width: 768px) {
+    .hero-logo {
+        max-width: 180px;
+        max-height: 280px;
+        padding: 1rem;
+    }
+    
+    .hero-logo-container {
+        margin-bottom: 1.5rem;
+    }
+    
     .game-grid {
         grid-template-columns: 1fr;
     }
