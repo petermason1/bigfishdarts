@@ -11,6 +11,7 @@ export default function Home() {
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
+  const [navOpen, setNavOpen] = useState(false)
   
   // Check if form was submitted (redirected back from FormSubmit)
   useEffect(() => {
@@ -21,6 +22,14 @@ export default function Home() {
       }
     }
   }, [])
+  
+  const toggleNav = () => {
+    setNavOpen(!navOpen)
+  }
+  
+  const closeNav = () => {
+    setNavOpen(false)
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // FormSubmit.co handles the submission automatically
@@ -45,12 +54,17 @@ export default function Home() {
             <img src="/logo.jpeg" alt="BigFish Darts" className="logo-image" />
             <span className="logo-text">BigFish Darts</span>
           </div>
-          <ul className="nav-menu">
-            <li><a href="/" className="nav-link active">Join Us</a></li>
-            <li><Link href="/demo" className="nav-link">Demo</Link></li>
-            <li><Link href="/sales" className="nav-link">Pricing</Link></li>
-            <li><Link href="/comp" className="nav-link">Competition</Link></li>
-            <li><Link href="/coaching" className="nav-link">Coaching</Link></li>
+          <button className={`nav-toggle ${navOpen ? 'active' : ''}`} onClick={toggleNav} aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
+            <li><a href="/" className="nav-link active" onClick={closeNav}>Join Us</a></li>
+            <li><Link href="/demo" className="nav-link" onClick={closeNav}>Demo</Link></li>
+            <li><Link href="/sales" className="nav-link" onClick={closeNav}>Pricing</Link></li>
+            <li><Link href="/comp" className="nav-link" onClick={closeNav}>Competition</Link></li>
+            <li><Link href="/coaching" className="nav-link" onClick={closeNav}>Coaching</Link></li>
           </ul>
         </div>
       </nav>

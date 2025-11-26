@@ -1,8 +1,19 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 
 export default function CoachingPage() {
+  const [navOpen, setNavOpen] = useState(false)
+  
+  const toggleNav = () => {
+    setNavOpen(!navOpen)
+  }
+  
+  const closeNav = () => {
+    setNavOpen(false)
+  }
+
   return (
     <>
       <nav className="nav">
@@ -11,12 +22,17 @@ export default function CoachingPage() {
             <img src="/logo.jpeg" alt="BigFish Darts" className="logo-image" />
             <span className="logo-text">BigFish Darts</span>
           </div>
-          <ul className="nav-menu">
-            <li><Link href="/" className="nav-link">Join Us</Link></li>
-            <li><Link href="/demo" className="nav-link">Demo</Link></li>
-            <li><Link href="/sales" className="nav-link">Pricing</Link></li>
-            <li><Link href="/comp" className="nav-link">Competition</Link></li>
-            <li><Link href="/coaching" className="nav-link active">Coaching</Link></li>
+          <button className={`nav-toggle ${navOpen ? 'active' : ''}`} onClick={toggleNav} aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
+            <li><Link href="/" className="nav-link" onClick={closeNav}>Join Us</Link></li>
+            <li><Link href="/demo" className="nav-link" onClick={closeNav}>Demo</Link></li>
+            <li><Link href="/sales" className="nav-link" onClick={closeNav}>Pricing</Link></li>
+            <li><Link href="/comp" className="nav-link" onClick={closeNav}>Competition</Link></li>
+            <li><Link href="/coaching" className="nav-link active" onClick={closeNav}>Coaching</Link></li>
           </ul>
         </div>
       </nav>
