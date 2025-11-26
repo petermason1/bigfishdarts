@@ -124,13 +124,111 @@ export default function DemoPage() {
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="demo-cta-section">
-            <div className="demo-cta-card">
-              <h2>Want Early Access?</h2>
-              <p>Join our waitlist to be among the first to experience BigFish Darts when we launch.</p>
-              <Link href="/" className="signup-button" style={{ display: 'inline-block', textDecoration: 'none', marginTop: '1.5rem' }}>
-                Join the Waitlist
+          {/* Complete Event Package Section */}
+          <div className="services-section">
+            <h2>Complete Event Package</h2>
+            <p className="services-intro">
+              We provide everything you need for a successful darts competition event. From setup to execution, we&apos;ve got you covered.
+            </p>
+            
+            <div className="services-grid">
+              <div className="service-card">
+                <div className="service-icon">💻</div>
+                <h3>Software Setup</h3>
+                <p>We set up all the software ready for your competition. No technical knowledge needed - we handle everything from installation to configuration.</p>
+                <ul>
+                  <li>Complete software installation</li>
+                  <li>System configuration</li>
+                  <li>Testing and troubleshooting</li>
+                  <li>On-site technical support</li>
+                </ul>
+              </div>
+              
+              <div className="service-card">
+                <div className="service-icon">📱</div>
+                <h3>Social Media & Marketing</h3>
+                <p>We manage your social media and provide professional posters and advertisements to promote your event.</p>
+                <ul>
+                  <li>Social media management</li>
+                  <li>Custom event posters</li>
+                  <li>Digital advertisements</li>
+                  <li>Event promotion materials</li>
+                </ul>
+              </div>
+              
+              <div className="service-card">
+                <div className="service-icon">🎤</div>
+                <h3>Event Hosting</h3>
+                <p>Run the event with our optional compare (MC) for the evening, or host it yourself - the choice is yours.</p>
+                <ul>
+                  <li>Professional MC/Compare service</li>
+                  <li>Event hosting support</li>
+                  <li>Self-hosting option available</li>
+                  <li>Full event coordination</li>
+                </ul>
+              </div>
+              
+              <div className="service-card">
+                <div className="service-icon">📺</div>
+                <h3>Video Screens</h3>
+                <p>Video screens with Tony off Bullseye - professional presentation and live scoring display.</p>
+                <ul>
+                  <li>Large screen displays</li>
+                  <li>Live score updates</li>
+                  <li>Professional presentation</li>
+                  <li>Real-time tournament brackets</li>
+                </ul>
+              </div>
+              
+              <div className="service-card">
+                <div className="service-icon">🍕</div>
+                <h3>Catering & Bar Service</h3>
+                <p>Catering and alcohol service available for unlicensed premises. We can arrange everything.</p>
+                <ul>
+                  <li>Full catering options</li>
+                  <li>Bar service for unlicensed venues</li>
+                  <li>Custom menu options</li>
+                  <li>Licensed alcohol service</li>
+                </ul>
+              </div>
+              
+              <div className="service-card">
+                <div className="service-icon">✨</div>
+                <h3>Custom Solutions</h3>
+                <p>We can meet most needs. Contact us to discuss your specific requirements and we&apos;ll create a tailored package.</p>
+                <ul>
+                  <li>Bespoke event packages</li>
+                  <li>Flexible arrangements</li>
+                  <li>Custom requirements welcome</li>
+                  <li>Tailored to your venue</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Request Info CTA */}
+          <div className="request-info-section">
+            <div className="request-info-card">
+              <h2>Request More Information</h2>
+              <p>
+                Interested in hosting a BigFish Darts event? We can meet most needs and create a package tailored to your venue and requirements.
+              </p>
+              <div className="request-benefits">
+                <div className="request-benefit">
+                  <strong>📋 Custom Quotes</strong>
+                  <p>Get a personalized quote for your event</p>
+                </div>
+                <div className="request-benefit">
+                  <strong>💬 Consultation</strong>
+                  <p>Discuss your specific needs and requirements</p>
+                </div>
+                <div className="request-benefit">
+                  <strong>🎯 Flexible Packages</strong>
+                  <p>Choose the services that work for you</p>
+                </div>
+              </div>
+              <Link href="/" className="signup-button" style={{ display: 'inline-block', textDecoration: 'none', marginTop: '2rem', fontSize: '1.1rem', padding: '1.2rem 3rem' }}>
+                Request Information & Get Quote
               </Link>
             </div>
           </div>
