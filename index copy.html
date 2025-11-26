@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigFish Darts - Interactive Darts Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">🎯 BigFish Darts</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Dart Board</a></li>
+                <li><a href="board2.html" class="nav-link">Bullseye Quiz</a></li>
+                <li><a href="board3.html" class="nav-link">Prize Board</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🎯 BigFish Darts</h1>
+            <p class="subtitle">Interactive darts gaming with real-time video</p>
+        </header>
+
+        <main>
+            <div class="game-room">
+                <h2>Dart Board</h2>
+                <p style="text-align: center; margin-bottom: 1rem; opacity: 0.9;">Standard 501 game - Hit the numbers to reduce your score!</p>
+                
+                <div class="board-container">
+                    <div class="dartboard classic-board">
+                        <div class="board-center">
+                            <div class="bullseye">BULL</div>
+                        </div>
+                        <div class="board-rings">
+                            <div class="ring triple"></div>
+                            <div class="ring double"></div>
+                        </div>
+                        <div class="board-numbers">
+                            <span>20</span><span>1</span><span>18</span><span>4</span><span>13</span>
+                            <span>6</span><span>10</span><span>15</span><span>2</span><span>17</span>
+                            <span>3</span><span>19</span><span>7</span><span>16</span><span>8</span>
+                            <span>11</span><span>14</span><span>9</span><span>12</span><span>5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camera & Voice Controls -->
+                <div class="camera-voice-section">
+                    <div class="connection-panel">
+                        <h3>📱 Connect Phones</h3>
+                        <div class="server-config">
+                            <label for="serverUrl" class="server-label">Server URL (WiFi/Domain):</label>
+                            <input type="text" id="serverUrl" placeholder="Auto-detected or enter wss://yourdomain.com" class="server-input">
+                            <button onclick="updateServerUrl()" class="server-save-btn">Save</button>
+                        </div>
+                        <div class="room-controls">
+                            <input type="text" id="roomId" placeholder="Enter or create room ID" class="room-input">
+                            <button onclick="createOrJoinRoom()" class="room-button">Join Room</button>
+                        </div>
+                        <p class="room-status" id="roomStatus">Not connected</p>
+                    </div>
+                    
+                    <div class="camera-controls">
+                        <button onclick="startCamera()" class="control-button" id="cameraBtn">📹 Start Camera</button>
+                        <button onclick="stopCamera()" class="control-button" id="stopCameraBtn" style="display:none;">⏹️ Stop Camera</button>
+                    </div>
+                    
+                    <div class="voice-controls">
+                        <button onclick="startVoiceCall()" class="control-button" id="voiceBtn">🎤 Start Voice</button>
+                        <button onclick="endVoiceCall()" class="control-button" id="endVoiceBtn" style="display:none;">🔇 End Voice</button>
+                        <div class="voice-status" id="voiceStatus">Voice: Off</div>
+                    </div>
+                    
+                    <details class="connection-info">
+                        <summary>ℹ️ How Voice Communication Works</summary>
+                        <div class="info-content">
+                            <h4 style="color: var(--union-red); margin-top: 0;">📡 How It Works (Step by Step):</h4>
+                            
+                            <p><strong>1. Setup Phase (via WiFi to your domain):</strong></p>
+                            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                <li>Phone 1 connects to your domain server via WiFi</li>
+                                <li>Phone 1 joins a room (e.g., "ABC123")</li>
+                                <li>Phone 2 connects to the same domain server via WiFi</li>
+                                <li>Phone 2 joins the same room</li>
+                                <li>Server matches them together</li>
+                            </ul>
+                            
+                            <p><strong>2. Connection Setup (signaling):</strong></p>
+                            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                <li>Phones exchange connection info through your server</li>
+                                <li>This includes network addresses and connection details</li>
+                                <li>Server acts as a "matchmaker" - just helps them find each other</li>
+                            </ul>
+                            
+                            <p><strong>3. Direct Connection (peer-to-peer):</strong></p>
+                            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                <li>Once connected, phones talk DIRECTLY to each other</li>
+                                <li>Voice audio flows: Phone 1 ↔ Phone 2 (bypasses server!)</li>
+                                <li>This is called WebRTC - Web Real-Time Communication</li>
+                                <li>Low latency, efficient, secure</li>
+                            </ul>
+                            
+                            <p style="background: rgba(220, 20, 60, 0.2); padding: 0.5rem; border-radius: 5px; border-left: 3px solid var(--union-red);">
+                                <strong>💡 Key Point:</strong> The server only helps establish the connection. Once connected, audio flows directly between phones via WiFi/mobile data - the server is no longer in the audio path!
+                            </p>
+                            
+                            <h4 style="color: var(--union-red); margin-top: 1rem;">🌐 WiFi to Domain Setup:</h4>
+                            <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                <li>Deploy signaling server to your domain (see README)</li>
+                                <li>Enter domain URL: <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">wss://yourdomain.com</code></li>
+                                <li>Both phones connect via WiFi to your domain</li>
+                                <li>Voice flows through WiFi, then directly between phones</li>
+                            </ol>
+                            
+                            <h4 style="color: var(--union-red); margin-top: 1rem;">🔵 Bluetooth Limitation:</h4>
+                            <p>Web browsers cannot directly stream audio via Bluetooth between phones. However, you can use Bluetooth tethering - one phone shares internet via Bluetooth, and WebRTC will use that connection.</p>
+                            
+                            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">
+                                📖 See <code>HOW_IT_WORKS.md</code> for detailed technical explanation
+                            </p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="game-grid">
+                    <!-- Video Feed -->
+                    <div class="video-feed">
+                        <video id="localVideo" autoplay playsinline style="display:none; width:100%; height:100%; object-fit:cover;"></video>
+                        <audio id="remoteAudio" autoplay style="display:none;"></audio>
+                        <div class="video-placeholder" id="videoPlaceholder">
+                            <p>📹 Click "Start Camera" to view the board</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Scoreboard -->
+                    <div class="scoreboard">
+                        <h3>Scoreboard</h3>
+                        <div class="scores">
+                            <div class="player-score">
+                                <span class="player-name">Player 1</span>
+                                <span class="score">501</span>
+                            </div>
+                            <div class="player-score">
+                                <span class="player-name">Player 2</span>
+                                <span class="score">501</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="start-button" onclick="startGame()">Start Game</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
