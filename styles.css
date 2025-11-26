@@ -1274,10 +1274,23 @@ header h1 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
+    justify-items: center;
+}
+
+/* For 4 items: 2x2 grid - symmetric layout */
+.services-grid:has(.service-card:nth-child(4):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+}
+
+/* For 6 items: 3x2 grid - symmetric layout (default above) */
+.service-card {
+    width: 100%;
+    max-width: 400px;
 }
 
 .service-card {
@@ -1443,6 +1456,281 @@ header h1 {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin: 0;
+}
+
+/* Extra Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    .demo-card {
+        padding: 1.25rem;
+    }
+    
+    .demo-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .demo-description {
+        font-size: 0.9rem;
+    }
+    
+    .demo-board {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .demo-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .demo-feature-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .demo-icon {
+        font-size: 2rem;
+        margin: 0 auto 0.5rem;
+    }
+    
+    .demo-feature-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .demo-feature-item p {
+        font-size: 0.9rem;
+    }
+    
+    .use-cases-section h2,
+    .services-section h2,
+    .technical-preview-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .use-case-card {
+        padding: 1.25rem;
+    }
+    
+    .use-case-icon {
+        font-size: 2.5rem;
+    }
+    
+    .use-case-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .use-case-card > p {
+        font-size: 0.9rem;
+    }
+    
+    .use-case-card ul li {
+        font-size: 0.85rem;
+    }
+    
+    .tech-features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .tech-feature {
+        padding: 1.25rem;
+    }
+    
+    .tech-feature h3 {
+        font-size: 1.1rem;
+    }
+    
+    .tech-feature p {
+        font-size: 0.9rem;
+    }
+    
+    .services-intro {
+        font-size: 1rem;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    
+    /* Services: 1 column on mobile (320px-480px) */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    /* 4 items: 1 column (stacks vertically) */
+    /* 6 items: 1 column (stacks vertically) */
+    
+    .service-card {
+        padding: 1.25rem;
+    }
+    
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-card > p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card ul li {
+        font-size: 0.85rem;
+        padding: 0.4rem 0;
+    }
+    
+    .request-info-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .request-info-card h2 {
+        font-size: 1.75rem;
+    }
+    
+    .request-info-card > p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .request-benefits {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .request-benefit {
+        padding: 1rem;
+    }
+    
+    .request-benefit strong {
+        font-size: 1rem;
+    }
+    
+    .request-benefit p {
+        font-size: 0.85rem;
+    }
+    
+    .signup-button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Small Mobile / Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .demo-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .demo-board {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .demo-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Services: 2 columns on tablets */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* 4 items: 2x2 (already 2 columns) */
+    /* 6 items: 3x2 becomes 2x3 (2 columns, 3 rows) */
+    
+    .services-section h2 {
+        font-size: 2rem;
+    }
+    
+    .services-intro {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .request-info-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .request-benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tech-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets / Small Desktops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Services: 3 columns for 6 items (3x2), 2 columns for 4 items (2x2) */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .services-grid:has(.service-card:nth-child(4):last-child) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
+    
+    .service-card {
+        max-width: 100%;
+    }
+    
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .request-benefits {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktops (1025px+) */
+@media (min-width: 1025px) {
+    /* Services: 3 columns for 6 items (3x2), 2 columns for 4 items (2x2) */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        max-width: 1400px;
+    }
+    
+    /* For 4 items: 2x2 symmetric grid */
+    .services-grid:has(.service-card:nth-child(4):last-child) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1000px;
+    }
+    
+    /* For 6 items: 3x2 symmetric grid (default above) */
+    .service-card {
+        max-width: 400px;
+    }
+    
+    .use-cases-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
