@@ -5,6 +5,30 @@ import '../styles.css'
 export const metadata: Metadata = {
   title: 'BigFish Darts - Join the Revolution',
   description: 'Revolutionary darts gaming experience for corporate events, pub nights, and competitive play',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'BigFish Darts - Join the Revolution',
+    description: 'Revolutionary darts gaming experience for corporate events, pub nights, and competitive play',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BigFish Darts',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BigFish Darts - Join the Revolution',
+    description: 'Revolutionary darts gaming experience for corporate events, pub nights, and competitive play',
+    images: ['/og-image.jpg'],
+  },
 }
 
 export default function RootLayout({
