@@ -54,7 +54,6 @@ export default function Home() {
           <ul className="nav-menu">
             <li><a href="/" className="nav-link active">Join Us</a></li>
             <li><Link href="/demo" className="nav-link">Demo</Link></li>
-            <li><a href="/game.html" className="nav-link">Full Demo</a></li>
           </ul>
         </div>
       </nav>

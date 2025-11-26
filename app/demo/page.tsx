@@ -11,7 +11,6 @@ export default function DemoPage() {
           <ul className="nav-menu">
             <li><Link href="/" className="nav-link">Join Us</Link></li>
             <li><Link href="/demo" className="nav-link active">Demo</Link></li>
-            <li><a href="/game.html" className="nav-link">Full Demo</a></li>
           </ul>
         </div>
       </nav>
