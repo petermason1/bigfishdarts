@@ -34,11 +34,7 @@ export default function Navbar() {
           onClick={toggleNav} 
           aria-label="Toggle navigation"
         >
-          <div className="bullseye-hamburger">
-            <div className="bullseye-ring outer"></div>
-            <div className="bullseye-ring middle"></div>
-            <div className="bullseye-center"></div>
-          </div>
+          <div className="target-icon">🎯</div>
         </button>
         <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
           <li>
