@@ -1,9 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
+
+// Note: useSearchParams requires Suspense in Next.js 13+
+// For now, we'll use a simpler approach
 
 export default function Home() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,32 +16,19 @@ export default function Home() {
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    try {
-      // Send to Next.js API route
-      const response = await fetch('/api/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-      
-      const result = await response.json()
-      
-      if (result.success) {
-        setSubmitted(true)
-      } else {
-        alert('Something went wrong. Please try again or email us directly at Info.bigfishdarts@gmail.com')
-      }
-    } catch (error) {
-      console.error('Sign-up error:', error)
-      // Fallback: Open email client
-      const subject = encodeURIComponent(`BigFish Darts Sign-up: ${formData.name}`)
-      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nInterest: ${formData.interest}\nMessage: ${formData.message || 'N/A'}`)
-      window.location.href = `mailto:Info.bigfishdarts@gmail.com?subject=${subject}&body=${body}`
+  
+  // Check if form was submitted (redirected back from FormSubmit)
+  useEffect(() => {
+    if (searchParams.get('submitted') === 'true') {
+      setSubmitted(true)
     }
+  }, [searchParams])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    // FormSubmit.co handles the submission automatically
+    // Form will submit to FormSubmit.co which sends email to Info.bigfishdarts@gmail.com
+    // No need to preventDefault - let the form submit naturally
+    // FormSubmit will redirect back to our page with ?submitted=true
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -85,7 +77,19 @@ export default function Home() {
               </p>
               
               {!submitted ? (
-                <form id="signupForm" className="signup-form" onSubmit={handleSubmit}>
+                <form 
+                  id="signupForm" 
+                  className="signup-form" 
+                  onSubmit={handleSubmit}
+                  action="https://formsubmit.co/Info.bigfishdarts@gmail.com"
+                  method="POST"
+                >
+                  {/* FormSubmit.co configuration */}
+                  <input type="hidden" name="_subject" value="New BigFish Darts Sign-up" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?submitted=true' : ''} />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_format" value="plain" />
                   <div className="form-group">
                     <label htmlFor="name">Name *</label>
                     <input

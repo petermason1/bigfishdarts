@@ -11,7 +11,7 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="logo.png" alt="BigFish Darts" class="logo-image" />
+                <img src="logo.jpeg" alt="BigFish Darts" class="logo-image" />
                 <span class="logo-text">BigFish Darts</span>
             </div>
             <ul class="nav-menu">
@@ -38,7 +38,18 @@
                         and get exclusive updates about our revolutionary darts platform.
                     </p>
                     
-                    <form id="signupForm" class="signup-form" onsubmit="handleSignup(event)">
+                    <form 
+                        id="signupForm" 
+                        class="signup-form" 
+                        action="https://formsubmit.co/Info.bigfishdarts@gmail.com"
+                        method="POST"
+                    >
+                        <!-- FormSubmit.co configuration -->
+                        <input type="hidden" name="_subject" value="New BigFish Darts Sign-up">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_format" value="plain">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Your name">
@@ -178,40 +189,18 @@
     </footer>
 
     <script>
-        function handleSignup(event) {
-            event.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                interest: document.getElementById('interest').value,
-                message: document.getElementById('message').value,
-                timestamp: new Date().toISOString()
-            };
-            
-            // Send email via mailto link (works without backend)
-            const subject = encodeURIComponent(`BigFish Darts Sign-up: ${formData.name}`);
-            const body = encodeURIComponent(
-                `New Sign-up from BigFish Darts Website\n\n` +
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Interest: ${formData.interest}\n` +
-                `Message: ${formData.message || 'N/A'}\n\n` +
-                `Timestamp: ${formData.timestamp}`
-            );
-            
-            // Open email client with pre-filled information
-            window.location.href = `mailto:Info.bigfishdarts@gmail.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            document.getElementById('signupForm').style.display = 'none';
-            document.getElementById('signupSuccess').style.display = 'block';
-            
-            // Optional: Scroll to success message
-            document.getElementById('signupSuccess').scrollIntoView({ behavior: 'smooth' });
-            
-            return false;
-        }
+        // FormSubmit.co handles the form submission automatically
+        // No JavaScript needed - form submits directly to FormSubmit.co
+        // They send the email to Info.bigfishdarts@gmail.com
+        
+        // Optional: Show success message on page load if redirected back
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('submitted') === 'true') {
+                document.getElementById('signupForm').style.display = 'none';
+                document.getElementById('signupSuccess').style.display = 'block';
+            }
+        });
         
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
