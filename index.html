@@ -128,7 +128,7 @@
                         </div>
                     </div>
               <p class="contact-note">
-                <strong>Contact us:</strong> <a href="mailto:peter.masonuk@icloud.com" id="contactEmail" style="color: var(--union-red); text-decoration: none;">peter.masonuk@icloud.com</a>
+                <strong>Contact us:</strong> <a href="mailto:Info.bigfishdarts@gmail.com" id="contactEmail" style="color: var(--union-red); text-decoration: none;">Info.bigfishdarts@gmail.com</a>
               </p>
                 </div>
             </div>
@@ -187,15 +187,19 @@
                 timestamp: new Date().toISOString()
             };
             
-            // For now, just log the data and show success message
-            // In production, you'd send this to your backend/email service
-            console.log('Sign-up data:', formData);
+            // Send email via mailto link (works without backend)
+            const subject = encodeURIComponent(`BigFish Darts Sign-up: ${formData.name}`);
+            const body = encodeURIComponent(
+                `New Sign-up from BigFish Darts Website\n\n` +
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Interest: ${formData.interest}\n` +
+                `Message: ${formData.message || 'N/A'}\n\n` +
+                `Timestamp: ${formData.timestamp}`
+            );
             
-            // You can integrate with:
-            // - Email service (SendGrid, Mailchimp, etc.)
-            // - Backend API
-            // - Google Sheets API
-            // - Database
+            // Open email client with pre-filled information
+            window.location.href = `mailto:Info.bigfishdarts@gmail.com?subject=${subject}&body=${body}`;
             
             // Show success message
             document.getElementById('signupForm').style.display = 'none';

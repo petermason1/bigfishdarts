@@ -15,21 +15,28 @@ export default function Home() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Log for now - integrate with your backend/email service
-    console.log('Sign-up data:', {
-      ...formData,
-      timestamp: new Date().toISOString()
-    })
-    
-    // TODO: Send to your backend/email service
-    // Example:
-    // await fetch('/api/signup', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData)
-    // })
-    
-    setSubmitted(true)
+    try {
+      // Send to Next.js API route
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      
+      const result = await response.json()
+      
+      if (result.success) {
+        setSubmitted(true)
+      } else {
+        alert('Something went wrong. Please try again or email us directly at Info.bigfishdarts@gmail.com')
+      }
+    } catch (error) {
+      console.error('Sign-up error:', error)
+      // Fallback: Open email client
+      const subject = encodeURIComponent(`BigFish Darts Sign-up: ${formData.name}`)
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nInterest: ${formData.interest}\nMessage: ${formData.message || 'N/A'}`)
+      window.location.href = `mailto:Info.bigfishdarts@gmail.com?subject=${subject}&body=${body}`
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -195,7 +202,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="contact-note">
-                <strong>Contact us:</strong> <a href="mailto:peter.masonuk@icloud.com" id="contactEmail" style={{ color: 'var(--union-red)', textDecoration: 'none' }}>peter.masonuk@icloud.com</a>
+                <strong>Contact us:</strong> <a href="mailto:Info.bigfishdarts@gmail.com" id="contactEmail" style={{ color: 'var(--union-red)', textDecoration: 'none' }}>Info.bigfishdarts@gmail.com</a>
               </p>
             </div>
           </div>
