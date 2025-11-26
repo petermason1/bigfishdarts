@@ -38,6 +38,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
 }
 
 .nav-logo {
@@ -78,6 +86,21 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure container is responsive */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .container {
+        padding: 1.5rem;
+    }
 }
 
 header {
@@ -548,6 +571,795 @@ header h1 {
     margin-bottom: 0.4rem;
 }
 
+/* Sign-up Page Styles */
+.signup-hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.signup-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, var(--union-white), var(--union-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.signup-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    color: var(--union-white);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--union-red);
+    color: var(--union-white);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border: 2px solid var(--union-blue);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
+
+.signup-section {
+    margin-bottom: 4rem;
+}
+
+.signup-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: 2px solid var(--union-red);
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.signup-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--union-white);
+    text-align: center;
+}
+
+.signup-description {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--union-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--union-blue);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--union-blue);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--union-red);
+    background: var(--union-white);
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(0, 48, 130, 0.5);
+}
+
+.signup-button {
+    padding: 1rem 2rem;
+    background: var(--union-red);
+    color: var(--union-white);
+    border: 3px solid var(--union-blue);
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.signup-button:hover {
+    background: var(--union-blue);
+    border-color: var(--union-red);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 48, 130, 0.6);
+}
+
+.signup-button:active {
+    transform: translateY(0);
+}
+
+.signup-success {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+    border-radius: 12px;
+}
+
+.signup-success h3 {
+    color: var(--union-white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.signup-success p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.features-preview {
+    margin-bottom: 4rem;
+}
+
+.features-preview h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--union-white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid var(--union-blue);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--union-red);
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--union-white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.partnership-section {
+    margin-bottom: 4rem;
+}
+
+.partnership-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border: 2px solid var(--union-blue);
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.partnership-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--union-white);
+    text-align: center;
+}
+
+.partnership-card > p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.partnership-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--union-red);
+}
+
+.benefit-item strong {
+    color: var(--union-white);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.contact-note {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(220, 20, 60, 0.2);
+    border-radius: 12px;
+    border: 2px solid var(--union-red);
+    margin-top: 2rem;
+}
+
+.contact-note strong {
+    color: var(--union-white);
+    font-size: 1.1rem;
+}
+
+#contactEmail {
+    color: var(--union-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.why-join-section {
+    margin-bottom: 4rem;
+}
+
+.why-join-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--union-white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 2px solid var(--union-blue);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.benefit-box:hover {
+    transform: translateX(5px);
+    border-color: var(--union-red);
+}
+
+.benefit-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--union-red);
+    color: var(--union-white);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 3px solid var(--union-blue);
+}
+
+.benefit-box h3 {
+    color: var(--union-white);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.signup-footer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 2px solid var(--union-red);
+    margin-top: 4rem;
+}
+
+.signup-footer p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.5rem 0;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ============================================
+   RESPONSIVE STYLES - ALL SCREEN SIZES
+   ============================================ */
+
+/* Extra Large Screens (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .signup-card,
+    .partnership-card {
+        max-width: 1000px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Screens / Desktops (1024px - 1399px) */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefits-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets / Small Desktops (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .signup-title {
+        font-size: 3rem;
+    }
+    
+    .signup-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .signup-card {
+        padding: 2.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefits-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .partnership-card {
+        padding: 2.5rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Tablets (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+    .signup-title {
+        font-size: 2.8rem;
+    }
+    
+    .signup-subtitle {
+        font-size: 1.25rem;
+        padding: 0 1rem;
+    }
+    
+    .signup-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .partnership-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .benefit-box {
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile / Small Tablets (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .signup-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .signup-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .signup-subtitle {
+        font-size: 1.1rem;
+        padding: 0;
+    }
+    
+    .signup-card {
+        padding: 1.5rem;
+        margin: 0;
+    }
+    
+    .signup-card h2 {
+        font-size: 1.75rem;
+    }
+    
+    .signup-description {
+        font-size: 0.95rem;
+    }
+    
+    .features-preview h2,
+    .why-join-section h2,
+    .partnership-card h2 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .partnership-card {
+        padding: 1.5rem;
+    }
+    
+    .partnership-benefits {
+        gap: 1rem;
+    }
+    
+    .benefit-item {
+        padding: 1.25rem;
+    }
+    
+    .benefit-box {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .benefit-number {
+        margin: 0 auto;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Small Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        gap: 0.3rem;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .signup-hero {
+        padding: 1.5rem 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .signup-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+    
+    .signup-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .coming-soon-badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .signup-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .signup-card {
+        padding: 1.25rem;
+        margin: 0;
+        border-radius: 15px;
+    }
+    
+    .signup-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .signup-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+    
+    .signup-form {
+        gap: 1.25rem;
+    }
+    
+    .form-group {
+        gap: 0.4rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 6px;
+    }
+    
+    .signup-button {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 40px;
+    }
+    
+    .signup-success {
+        padding: 1.5rem;
+    }
+    
+    .signup-success h3 {
+        font-size: 1.5rem;
+    }
+    
+    .signup-success p {
+        font-size: 1rem;
+    }
+    
+    .features-preview,
+    .why-join-section,
+    .partnership-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .features-preview h2,
+    .why-join-section h2,
+    .partnership-card h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .feature-card {
+        padding: 1.25rem;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .benefit-box {
+        padding: 1.25rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .benefit-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
+        margin: 0 auto;
+    }
+    
+    .benefit-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .benefit-box p {
+        font-size: 0.9rem;
+    }
+    
+    .partnership-card {
+        padding: 1.25rem;
+        margin: 0;
+    }
+    
+    .partnership-card > p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .partnership-benefits {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .benefit-item {
+        padding: 1rem;
+    }
+    
+    .benefit-item strong {
+        font-size: 1rem;
+    }
+    
+    .benefit-item p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-note {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-note strong {
+        font-size: 1rem;
+    }
+    
+    #contactEmail {
+        font-size: 1rem;
+        display: block;
+        word-break: break-all;
+    }
+    
+    .signup-footer {
+        padding: 1.5rem 1rem;
+        margin-top: 2.5rem;
+    }
+    
+    .signup-footer p {
+        font-size: 0.85rem;
+    }
+    
+    .footer-note {
+        font-size: 0.8rem;
+    }
+}
+
+/* General Mobile Styles (max-width: 768px) */
 @media (max-width: 768px) {
     .room-controls {
         flex-direction: column;
@@ -568,6 +1380,72 @@ header h1 {
     
     .info-content {
         font-size: 0.85rem;
+    }
+    
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-container,
+    .prize-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .dartboard,
+    .quiz-board,
+    .prize-board {
+        width: 300px;
+        height: 300px;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+/* Landscape Orientation on Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .signup-hero {
+        padding: 1.5rem;
+    }
+    
+    .signup-title {
+        font-size: 2rem;
+    }
+    
+    .signup-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .nav,
+    .signup-footer {
+        display: none;
+    }
+    
+    .signup-card,
+    .partnership-card {
+        border: 1px solid #000;
+        box-shadow: none;
     }
 }
 

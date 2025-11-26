@@ -213,3 +213,4 @@ Phone 1 ←→ Direct P2P Connection ←→ Phone 2
 
 The server is like a "matchmaker" - it introduces the phones, but then they talk directly to each other!
 
+
