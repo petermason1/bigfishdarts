@@ -127,9 +127,9 @@
                             <p>Bring BigFish Darts to your pub, bar, or entertainment venue</p>
                         </div>
                     </div>
-                    <p class="contact-note">
-                        <strong>Contact us:</strong> <span id="contactEmail">[Email address coming soon]</span>
-                    </p>
+              <p class="contact-note">
+                <strong>Contact us:</strong> <a href="mailto:peter.masonuk@icloud.com" id="contactEmail" style="color: var(--union-red); text-decoration: none;">peter.masonuk@icloud.com</a>
+              </p>
                 </div>
             </div>
 
@@ -207,18 +207,10 @@
             return false;
         }
         
-        // Update contact email when provided
-        function updateContactEmail(email) {
-            const contactElement = document.getElementById('contactEmail');
-            if (contactElement && email) {
-                contactElement.textContent = email;
-                contactElement.style.color = 'var(--union-red)';
-            }
-        }
-        
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             console.log('BigFish Darts Sign-up page loaded');
+            // Contact email is already set in HTML
         });
     </script>
 </body>

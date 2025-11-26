@@ -195,7 +195,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="contact-note">
-                <strong>Contact us:</strong> <span id="contactEmail">[Email address coming soon]</span>
+                <strong>Contact us:</strong> <a href="mailto:peter.masonuk@icloud.com" id="contactEmail" style={{ color: 'var(--union-red)', textDecoration: 'none' }}>peter.masonuk@icloud.com</a>
               </p>
             </div>
           </div>
