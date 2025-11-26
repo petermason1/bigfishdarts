@@ -208,6 +208,29 @@ export default function DemoPage() {
                 </ul>
               </div>
             </div>
+            
+            {/* Legends Package Highlight */}
+            <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+              <div className="service-card" style={{ background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(0, 48, 130, 0.2) 100%)', borderColor: 'var(--union-red)', borderWidth: '3px', maxWidth: '900px', margin: '0 auto' }}>
+                <div className="service-icon" style={{ fontSize: '4rem' }}>🌟</div>
+                <h3 style={{ fontSize: '2rem', color: 'var(--union-white)', marginBottom: '1rem' }}>Legends Package - Exclusive Experience</h3>
+                <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>
+                  Bring a retired darts legend to your event! This exclusive package includes meet & greets, exhibition matches, photo opportunities, and unforgettable memories with a true darts icon.
+                </p>
+                <ul style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto 2rem' }}>
+                  <li>Retired darts legend appearance</li>
+                  <li>Meet & greet sessions</li>
+                  <li>Exhibition matches</li>
+                  <li>Photo opportunities</li>
+                  <li>Autograph sessions</li>
+                  <li>Q&A with the legend</li>
+                  <li>Exclusive memorabilia</li>
+                </ul>
+                <Link href="/sales" className="signup-button" style={{ display: 'inline-block', textDecoration: 'none', fontSize: '1.1rem', padding: '1.2rem 3rem', background: 'var(--union-red)' }}>
+                  Learn More About Legends Package
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Request Info CTA */}

@@ -107,6 +107,67 @@ export default function SalesPage() {
                   Get Quote
                 </Link>
               </div>
+
+              <div className="pricing-card featured" style={{ borderColor: 'var(--union-red)', borderWidth: '4px', background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.15) 0%, rgba(0, 48, 130, 0.15) 100%)' }}>
+                <div className="pricing-badge" style={{ background: 'var(--union-red)', fontSize: '1rem', padding: '0.6rem 2rem' }}>🌟 Exclusive</div>
+                <div className="pricing-header">
+                  <h3>Legends Package</h3>
+                  <div className="pricing-price">
+                    <span className="price-amount">POA</span>
+                    <span className="price-period">per event</span>
+                  </div>
+                </div>
+                <div className="pricing-features">
+                  <ul>
+                    <li>✓ Everything in Premium</li>
+                    <li>✓ <strong>Retired Darts Legend Appearance</strong></li>
+                    <li>✓ Meet & greet with the legend</li>
+                    <li>✓ Photo opportunities</li>
+                    <li>✓ Exhibition matches</li>
+                    <li>✓ Autograph sessions</li>
+                    <li>✓ Q&A session</li>
+                    <li>✓ Exclusive memorabilia</li>
+                    <li>✓ VIP experience</li>
+                  </ul>
+                </div>
+                <Link href="/" className="pricing-button" style={{ background: 'var(--union-red)', fontSize: '1.2rem', padding: '1.2rem 2.5rem' }}>
+                  Contact for Quote
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Legends Package Highlight */}
+          <div className="request-info-section">
+            <div className="request-info-card" style={{ background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(0, 48, 130, 0.2) 100%)', borderColor: 'var(--union-red)', borderWidth: '3px' }}>
+              <h2 style={{ color: 'var(--union-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>🌟 Legends Package - Exclusive Experience</h2>
+              <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+                Take your event to the next level with an exclusive appearance from a retired darts legend. This once-in-a-lifetime experience includes meet & greets, exhibition matches, and unforgettable memories.
+              </p>
+              <div className="request-benefits">
+                <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
+                  <strong>🏆 Darts Legend</strong>
+                  <p>Appearance from a retired professional darts player</p>
+                </div>
+                <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
+                  <strong>📸 Photo Opportunities</strong>
+                  <p>Professional photos with the legend</p>
+                </div>
+                <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
+                  <strong>🎯 Exhibition Matches</strong>
+                  <p>Watch the legend play live</p>
+                </div>
+                <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
+                  <strong>✍️ Autographs</strong>
+                  <p>Signed memorabilia and autograph sessions</p>
+                </div>
+              </div>
+              <p style={{ marginTop: '2rem', fontSize: '1.1rem', fontStyle: 'italic', opacity: 0.9 }}>
+                Available legends subject to availability. Contact us to discuss which legend would be perfect for your event.
+              </p>
+              <Link href="/" className="signup-button" style={{ display: 'inline-block', textDecoration: 'none', marginTop: '2rem', fontSize: '1.2rem', padding: '1.3rem 3.5rem', background: 'var(--union-red)' }}>
+                Inquire About Legends Package
+              </Link>
             </div>
           </div>
 
