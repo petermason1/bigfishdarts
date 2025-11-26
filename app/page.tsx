@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -45,7 +46,8 @@ export default function Home() {
           <div className="nav-logo">🎯 BigFish Darts</div>
           <ul className="nav-menu">
             <li><a href="/" className="nav-link active">Join Us</a></li>
-            <li><a href="/game.html" className="nav-link">Try Demo</a></li>
+            <li><Link href="/demo" className="nav-link">Demo</Link></li>
+            <li><a href="/game.html" className="nav-link">Full Demo</a></li>
           </ul>
         </div>
       </nav>
