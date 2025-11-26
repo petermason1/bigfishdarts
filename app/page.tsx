@@ -48,6 +48,8 @@ export default function Home() {
           <ul className="nav-menu">
             <li><a href="/" className="nav-link active">Join Us</a></li>
             <li><Link href="/demo" className="nav-link">Demo</Link></li>
+            <li><Link href="/sales" className="nav-link">Pricing</Link></li>
+            <li><Link href="/comp" className="nav-link">Competition</Link></li>
           </ul>
         </div>
       </nav>

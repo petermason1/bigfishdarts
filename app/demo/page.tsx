@@ -14,6 +14,8 @@ export default function DemoPage() {
           <ul className="nav-menu">
             <li><Link href="/" className="nav-link">Join Us</Link></li>
             <li><Link href="/demo" className="nav-link active">Demo</Link></li>
+            <li><Link href="/sales" className="nav-link">Pricing</Link></li>
+            <li><Link href="/comp" className="nav-link">Competition</Link></li>
           </ul>
         </div>
       </nav>
@@ -35,21 +37,11 @@ export default function DemoPage() {
               </p>
               
               <div className="demo-board-container">
-                <div className="dartboard classic-board demo-board">
-                  <div className="board-center">
-                    <div className="bullseye">BULL</div>
-                  </div>
-                  <div className="board-rings">
-                    <div className="ring triple"></div>
-                    <div className="ring double"></div>
-                  </div>
-                  <div className="board-numbers">
-                    <span>20</span><span>1</span><span>18</span><span>4</span><span>13</span>
-                    <span>6</span><span>10</span><span>15</span><span>2</span><span>17</span>
-                    <span>3</span><span>19</span><span>7</span><span>16</span><span>8</span>
-                    <span>11</span><span>14</span><span>9</span><span>12</span><span>5</span>
-                  </div>
-                </div>
+                <img 
+                  src="/dartboard-setup.jpg" 
+                  alt="Professional BigFish Darts setup with illuminated dartboard, wooden backboard, and accessories" 
+                  className="demo-board-image"
+                />
               </div>
 
               <div className="demo-features">
@@ -119,6 +111,17 @@ export default function DemoPage() {
                   <li>Tournament brackets</li>
                   <li>Live scoring and updates</li>
                   <li>Prize management</li>
+                </ul>
+              </div>
+              
+              <div className="use-case-card">
+                <div className="use-case-icon">🎉</div>
+                <h3>Special Events</h3>
+                <p>Perfect for birthdays, celebrations, and private parties</p>
+                <ul>
+                  <li>Custom event themes</li>
+                  <li>Group activities</li>
+                  <li>Memorable experiences</li>
                 </ul>
               </div>
             </div>
@@ -225,6 +228,10 @@ export default function DemoPage() {
                 <div className="request-benefit">
                   <strong>🎯 Flexible Packages</strong>
                   <p>Choose the services that work for you</p>
+                </div>
+                <div className="request-benefit">
+                  <strong>⚡ Quick Response</strong>
+                  <p>Fast turnaround on quotes and inquiries</p>
                 </div>
               </div>
               <Link href="/" className="signup-button" style={{ display: 'inline-block', textDecoration: 'none', marginTop: '2rem', fontSize: '1.1rem', padding: '1.2rem 3rem' }}>

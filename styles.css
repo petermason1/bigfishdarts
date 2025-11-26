@@ -1081,9 +1081,39 @@ header h1 {
 .demo-board-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 2rem 0;
+    position: relative;
 }
 
+.demo-board-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+    border: 4px solid var(--union-red);
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+    transition: all 0.3s ease;
+    animation: subtle-glow 3s ease-in-out infinite;
+}
+
+.demo-board-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 50px rgba(220, 20, 60, 0.4);
+    filter: brightness(1.15) contrast(1.15) saturate(1.3);
+}
+
+@keyframes subtle-glow {
+    0%, 100% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 50px rgba(220, 20, 60, 0.5);
+    }
+}
+
+/* Legacy CSS dartboard - keeping for fallback */
 .demo-board {
     width: 300px;
     height: 300px;
@@ -1103,10 +1133,15 @@ header h1 {
 
 .demo-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+/* For 4 items: 2x2 grid (default above) */
 
 .demo-feature-item {
     display: flex;
@@ -1156,11 +1191,13 @@ header h1 {
 
 .use-cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
+
+/* For 4 items: 2x2 grid (default above) */
 
 .use-case-card {
     background: rgba(255, 255, 255, 0.1);
@@ -1278,7 +1315,7 @@ header h1 {
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    justify-items: center;
+    align-items: start;
 }
 
 /* For 4 items: 2x2 grid - symmetric layout */
@@ -1290,19 +1327,13 @@ header h1 {
 /* For 6 items: 3x2 grid - symmetric layout (default above) */
 .service-card {
     width: 100%;
-    max-width: 400px;
-}
-
-.service-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 2px solid var(--union-blue);
-    transition: all 0.3s ease;
+    max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
+
+/* Service card styles are defined above - this is a duplicate, keeping the one above */
 
 .service-card:hover {
     transform: translateY(-5px);
@@ -1385,10 +1416,15 @@ header h1 {
 
 .request-benefits {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+/* For 4 items: 2x2 grid (default above) */
 
 .request-benefit {
     background: rgba(0, 0, 0, 0.2);
@@ -1424,11 +1460,13 @@ header h1 {
 
 .tech-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
 }
+
+/* For 4 items: 2x2 grid (default above) */
 
 .tech-feature {
     background: rgba(255, 255, 255, 0.1);
@@ -1458,6 +1496,308 @@ header h1 {
     margin: 0;
 }
 
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid var(--union-blue);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pricing-card.featured {
+    border-color: var(--union-red);
+    border-width: 3px;
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(220, 20, 60, 0.4);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--union-red);
+    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.3);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--union-red);
+    color: var(--union-white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 2px solid var(--union-blue);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.pricing-header h3 {
+    color: var(--union-white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.pricing-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--union-red);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.price-period {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-features {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+.pricing-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-features ul li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.pricing-features ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    width: 8px;
+    height: 8px;
+    background: var(--union-red);
+    border-radius: 50%;
+}
+
+.pricing-button {
+    padding: 1rem 2rem;
+    background: var(--union-red);
+    color: var(--union-white);
+    border: 3px solid var(--union-blue);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pricing-button:hover {
+    background: var(--union-blue);
+    border-color: var(--union-red);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 48, 130, 0.6);
+}
+
+/* FAQ Section */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 2px solid var(--union-blue);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--union-red);
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+}
+
+.faq-item h3 {
+    color: var(--union-white);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.faq-item p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Competition Page Styles */
+.comp-hero {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+}
+
+.comp-challenge {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 3px solid var(--union-red);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 20px 50px rgba(220, 20, 60, 0.4);
+}
+
+.comp-challenge h2 {
+    font-size: 2.5rem;
+    color: var(--union-white);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.comp-challenge .challenge-text {
+    font-size: 1.5rem;
+    color: var(--union-white);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+.comp-challenge .prize-info {
+    background: rgba(220, 20, 60, 0.2);
+    border: 2px solid var(--union-red);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.comp-challenge .prize-info h3 {
+    color: var(--union-white);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.comp-challenge .prize-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.comp-rules {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid var(--union-blue);
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.comp-rules h3 {
+    color: var(--union-white);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.comp-rules ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comp-rules ul li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comp-rules ul li:last-child {
+    border-bottom: none;
+}
+
+.comp-rules ul li::before {
+    content: '🎯';
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.comp-submit {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.comp-submit-button {
+    padding: 1.2rem 3rem;
+    background: var(--union-red);
+    color: var(--union-white);
+    border: 3px solid var(--union-blue);
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.comp-submit-button:hover {
+    background: var(--union-blue);
+    border-color: var(--union-red);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 48, 130, 0.6);
+}
+
 /* Extra Small Mobile (320px - 480px) */
 @media (max-width: 480px) {
     .demo-card {
@@ -1472,9 +1812,10 @@ header h1 {
         font-size: 0.9rem;
     }
     
-    .demo-board {
-        width: 200px;
-        height: 200px;
+    .demo-board-image {
+        max-width: 100%;
+        border-radius: 15px;
+        border-width: 3px;
     }
     
     .demo-features {
@@ -1632,9 +1973,8 @@ header h1 {
         padding: 2rem 1.5rem;
     }
     
-    .demo-board {
-        width: 250px;
-        height: 250px;
+    .demo-board-image {
+        max-width: 100%;
     }
     
     .demo-features {
@@ -1647,14 +1987,19 @@ header h1 {
         gap: 1.5rem;
     }
     
-    /* Services: 2 columns on tablets */
+    /* Services: 2 columns on tablets - ensures even layout */
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+        max-width: 900px;
     }
     
-    /* 4 items: 2x2 (already 2 columns) */
-    /* 6 items: 3x2 becomes 2x3 (2 columns, 3 rows) */
+    /* 4 items: 2x2 (already 2 columns) - symmetric */
+    /* 6 items: 2x3 (2 columns, 3 rows) - symmetric */
+    
+    .service-card {
+        max-width: 100%;
+    }
     
     .services-section h2 {
         font-size: 2rem;
@@ -1688,6 +2033,7 @@ header h1 {
     .services-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+        max-width: 1200px;
     }
     
     .services-grid:has(.service-card:nth-child(4):last-child) {
@@ -1697,6 +2043,7 @@ header h1 {
     
     .service-card {
         max-width: 100%;
+        min-height: 0; /* Allow flex shrinking */
     }
     
     .use-cases-grid {
@@ -1725,11 +2072,17 @@ header h1 {
     
     /* For 6 items: 3x2 symmetric grid (default above) */
     .service-card {
-        max-width: 400px;
+        max-width: 100%;
     }
     
     .use-cases-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1000px;
+    }
+    
+    .request-benefits {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
     }
 }
 
@@ -1738,9 +2091,8 @@ header h1 {
         padding: 2rem 1.5rem;
     }
     
-    .demo-board {
-        width: 250px;
-        height: 250px;
+    .demo-board-image {
+        max-width: 100%;
     }
     
     .demo-features {
@@ -1761,6 +2113,50 @@ header h1 {
     
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .comp-challenge {
+        padding: 2rem 1.5rem;
+    }
+    
+    .comp-challenge h2 {
+        font-size: 2rem;
+    }
+    
+    .comp-challenge .challenge-text {
+        font-size: 1.25rem;
+    }
+    
+    .comp-rules {
+        padding: 2rem 1.5rem;
+    }
+    
+    .comp-rules h3 {
+        font-size: 1.75rem;
+    }
+    
+    .comp-rules ul li {
+        font-size: 1rem;
+        padding: 0.75rem 0;
+        padding-left: 1.5rem;
     }
     
     .services-section h2 {

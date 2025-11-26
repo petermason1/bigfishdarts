@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import '../styles.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'BigFish Darts - Join the Revolution',
   description: 'Revolutionary darts gaming experience for corporate events, pub nights, and competitive play',
   icons: {
