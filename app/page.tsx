@@ -51,7 +51,7 @@ export default function Home() {
       <nav className="nav">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/logo.png" alt="BigFish Darts" className="logo-image" />
+            <img src="/logo.jpeg" alt="BigFish Darts" className="logo-image" />
             <span className="logo-text">BigFish Darts</span>
           </div>
           <ul className="nav-menu">
@@ -64,7 +64,10 @@ export default function Home() {
       <div className="container">
         {/* Hero Section */}
         <header className="signup-hero">
-          <h1 className="signup-title">🎯 The Future of Darts is Coming</h1>
+          <div className="hero-logo-container">
+            <img src="/logo.jpeg" alt="BigFish Darts Logo" className="hero-logo" />
+          </div>
+          <h1 className="signup-title">The Future of Darts is Coming</h1>
           <p className="signup-subtitle">
             Revolutionary darts gaming experience for corporate events, pub nights, and competitive play
           </p>

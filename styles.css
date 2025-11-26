@@ -59,14 +59,22 @@ body {
 }
 
 .logo-image {
-    height: 40px;
+    height: 50px;
     width: auto;
     object-fit: contain;
-    border-radius: 4px;
+    border-radius: 6px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
 }
 
 .logo-text {
     display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 @media (max-width: 640px) {
@@ -75,7 +83,7 @@ body {
     }
     
     .logo-image {
-        height: 35px;
+        height: 40px;
     }
 }
 
@@ -602,6 +610,44 @@ header h1 {
     margin-bottom: 3rem;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+}
+
+.hero-logo-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo {
+    max-width: 250px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(220, 20, 60, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    padding: 1.5rem;
+    backdrop-filter: blur(15px);
+    border: 4px solid var(--union-red);
+    animation: logoFloat 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.hero-logo:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(220, 20, 60, 0.5);
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .signup-title {
@@ -613,6 +659,14 @@ header h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+}
+
+.signup-title::before {
+    content: '🎯';
+    display: inline-block;
+    margin-right: 0.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
 }
 
 .signup-subtitle {
@@ -653,6 +707,19 @@ header h1 {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .signup-card h2 {
@@ -660,6 +727,9 @@ header h1 {
     margin-bottom: 1rem;
     color: var(--union-white);
     text-align: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .signup-description {
@@ -667,12 +737,16 @@ header h1 {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .form-group {
