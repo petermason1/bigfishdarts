@@ -2,13 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
-
-// Note: useSearchParams requires Suspense in Next.js 13+
-// For now, we'll use a simpler approach
 
 export default function Home() {
-  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,10 +14,13 @@ export default function Home() {
   
   // Check if form was submitted (redirected back from FormSubmit)
   useEffect(() => {
-    if (searchParams.get('submitted') === 'true') {
-      setSubmitted(true)
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      if (urlParams.get('submitted') === 'true') {
+        setSubmitted(true)
+      }
     }
-  }, [searchParams])
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     // FormSubmit.co handles the submission automatically
