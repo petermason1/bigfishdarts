@@ -50,7 +50,10 @@ export default function Home() {
     <>
       <nav className="nav">
         <div className="nav-container">
-          <div className="nav-logo">🎯 BigFish Darts</div>
+          <div className="nav-logo">
+            <img src="/logo.png" alt="BigFish Darts" className="logo-image" />
+            <span className="logo-text">BigFish Darts</span>
+          </div>
           <ul className="nav-menu">
             <li><a href="/" className="nav-link active">Join Us</a></li>
             <li><Link href="/demo" className="nav-link">Demo</Link></li>
