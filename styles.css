@@ -2217,9 +2217,7 @@ header h1 {
         transform: scale(1);
     }
     
-    .pricing-card.featured:hover {
-        transform: translateY(-10px);
-    }
+    .pricing-card.featured {
         transform: scale(1);
     }
     
