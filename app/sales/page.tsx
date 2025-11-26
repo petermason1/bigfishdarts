@@ -1,40 +1,13 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 export default function SalesPage() {
-  const [navOpen, setNavOpen] = useState(false)
-  
-  const toggleNav = () => {
-    setNavOpen(!navOpen)
-  }
-  
-  const closeNav = () => {
-    setNavOpen(false)
-  }
-
   return (
     <>
-      <nav className="nav">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <img src="/logo.jpeg" alt="Big Fish Darts" className="logo-image" />
-            <span className="logo-text">Big Fish Darts</span>
-            <span className="nav-bell">🔔</span>
-          </div>
-          <button className={`nav-toggle ${navOpen ? 'active' : ''}`} onClick={toggleNav} aria-label="Toggle navigation">
-            <span className="bullseye-icon">🎯</span>
-          </button>
-          <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
-            <li><Link href="/" className="nav-link" onClick={closeNav}>Join Us</Link></li>
-            <li><Link href="/demo" className="nav-link" onClick={closeNav}>Demo</Link></li>
-            <li><Link href="/sales" className="nav-link active" onClick={closeNav}>Pricing</Link></li>
-            <li><Link href="/comp" className="nav-link" onClick={closeNav}>Competition</Link></li>
-            <li><Link href="/coaching" className="nav-link" onClick={closeNav}>Coaching</Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="container">
         <header className="signup-hero">
@@ -304,10 +277,7 @@ export default function SalesPage() {
         </main>
       </div>
 
-      <footer className="signup-footer">
-        <p>&copy; 2024 BigFish Darts. All rights reserved.</p>
-        <p className="footer-note">Building the future of interactive darts gaming</p>
-      </footer>
+      <Footer />
     </>
   )
 }

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -11,7 +13,6 @@ export default function Home() {
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
-  const [navOpen, setNavOpen] = useState(false)
   
   // Check if form was submitted (redirected back from FormSubmit)
   useEffect(() => {
@@ -22,14 +23,6 @@ export default function Home() {
       }
     }
   }, [])
-  
-  const toggleNav = () => {
-    setNavOpen(!navOpen)
-  }
-  
-  const closeNav = () => {
-    setNavOpen(false)
-  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // FormSubmit.co handles the submission automatically
@@ -48,25 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <nav className="nav">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <img src="/logo.jpeg" alt="Big Fish Darts" className="logo-image" />
-            <span className="logo-text">Big Fish Darts</span>
-            <span className="nav-bell">🔔</span>
-          </div>
-          <button className={`nav-toggle ${navOpen ? 'active' : ''}`} onClick={toggleNav} aria-label="Toggle navigation">
-            <span className="bullseye-icon">🎯</span>
-          </button>
-          <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
-            <li><a href="/" className="nav-link active" onClick={closeNav}>Join Us</a></li>
-            <li><Link href="/demo" className="nav-link" onClick={closeNav}>Demo</Link></li>
-            <li><Link href="/sales" className="nav-link" onClick={closeNav}>Pricing</Link></li>
-            <li><Link href="/comp" className="nav-link" onClick={closeNav}>Competition</Link></li>
-            <li><Link href="/coaching" className="nav-link" onClick={closeNav}>Coaching</Link></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="container">
         {/* Hero Section */}
@@ -268,10 +243,7 @@ export default function Home() {
         </main>
       </div>
 
-      <footer className="signup-footer">
-        <p>&copy; 2024 BigFish Darts. All rights reserved.</p>
-        <p className="footer-note">Building the future of interactive darts gaming</p>
-      </footer>
+      <Footer />
     </>
   )
 }
