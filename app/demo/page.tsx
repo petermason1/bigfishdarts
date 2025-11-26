@@ -8,7 +8,7 @@ export default function DemoPage() {
       <nav className="nav">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/logo.png" alt="BigFish Darts" className="logo-image" />
+            <img src="/logo.jpeg" alt="BigFish Darts" className="logo-image" />
             <span className="logo-text">BigFish Darts</span>
           </div>
           <ul className="nav-menu">
