@@ -19,13 +19,12 @@ export default function SalesPage() {
       <nav className="nav">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/logo.jpeg" alt="BigFish Darts" className="logo-image" />
-            <span className="logo-text">BigFish Darts</span>
+            <img src="/logo.jpeg" alt="Big Fish Darts" className="logo-image" />
+            <span className="logo-text">Big Fish Darts</span>
+            <span className="nav-bell">🔔</span>
           </div>
           <button className={`nav-toggle ${navOpen ? 'active' : ''}`} onClick={toggleNav} aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className="bullseye-icon">🎯</span>
           </button>
           <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
             <li><Link href="/" className="nav-link" onClick={closeNav}>Join Us</Link></li>
