@@ -11,7 +11,7 @@ export default function DemoPage() {
 
       <div className="container">
         <header className="signup-hero">
-          <h1 className="signup-title">BigFish Darts Demo</h1>
+          <h1 className="signup-title">Big Fish Darts Demo</h1>
           <p className="signup-subtitle">Preview of our revolutionary darts gaming platform</p>
           <div className="coming-soon-badge" style={{ background: 'var(--union-blue)' }}>Coming Soon</div>
         </header>
@@ -28,7 +28,7 @@ export default function DemoPage() {
               <div className="demo-board-container">
                 <img 
                   src="/dartboard-setup.jpg" 
-                  alt="Professional BigFish Darts setup with illuminated dartboard, wooden backboard, and accessories" 
+                  alt="Professional Big Fish Darts setup with illuminated dartboard, wooden backboard, and accessories" 
                   className="demo-board-image"
                 />
               </div>
@@ -226,7 +226,7 @@ export default function DemoPage() {
             <div className="request-info-card">
               <h2>Request More Information</h2>
               <p>
-                Interested in hosting a BigFish Darts event? We can meet most needs and create a package tailored to your venue and requirements.
+                Interested in hosting a Big Fish Darts event? We can meet most needs and create a package tailored to your venue and requirements.
               </p>
               <div className="request-benefits">
                 <div className="request-benefit">

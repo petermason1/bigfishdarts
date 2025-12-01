@@ -11,7 +11,7 @@ export default function SalesPage() {
 
       <div className="container">
         <header className="signup-hero">
-          <h1 className="signup-title">BigFish Darts Pricing</h1>
+          <h1 className="signup-title">Big Fish Darts Pricing</h1>
           <p className="signup-subtitle">Flexible packages tailored to your event needs</p>
         </header>
 

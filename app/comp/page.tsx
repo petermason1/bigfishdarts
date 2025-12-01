@@ -11,7 +11,7 @@ export default function CompPage() {
 
       <div className="container">
         <header className="comp-hero">
-          <h1 className="signup-title">BigFish Darts Competition</h1>
+          <h1 className="signup-title">Big Fish Darts Competition</h1>
           <p className="signup-subtitle">Show us your skills and win amazing prizes!</p>
         </header>
 
@@ -55,7 +55,7 @@ export default function CompPage() {
               <li>Video must clearly show the dartboard and your throws</li>
               <li>Your face or identifying feature must be visible to prove it&apos;s you</li>
               <li>Submit your video via the contact form below</li>
-              <li>Winners will be selected by BigFish Darts team</li>
+              <li>Winners will be selected by Big Fish Darts team</li>
               <li>Competition closes on the date specified (TBA)</li>
             </ul>
           </div>

@@ -47,7 +47,7 @@ export default function Home() {
         {/* Hero Section */}
         <header className="signup-hero">
           <div className="hero-logo-container">
-            <img src="/logo.jpeg" alt="BigFish Darts Logo" className="hero-logo" />
+            <img src="/logo.jpeg" alt="Big Fish Darts Logo" className="hero-logo" />
           </div>
           <h1 className="signup-title">The Future of Darts is Coming</h1>
           <p className="signup-subtitle">
@@ -75,7 +75,7 @@ export default function Home() {
                   method="POST"
                 >
                   {/* FormSubmit.co configuration */}
-                  <input type="hidden" name="_subject" value="New BigFish Darts Sign-up" />
+                  <input type="hidden" name="_subject" value="New Big Fish Darts Sign-up" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?submitted=true' : ''} />
                   <input type="hidden" name="_template" value="table" />
@@ -197,7 +197,7 @@ export default function Home() {
                 </div>
                 <div className="benefit-item">
                   <strong>Venue Collaborations</strong>
-                  <p>Bring BigFish Darts to your pub, bar, or entertainment venue</p>
+                  <p>Bring Big Fish Darts to your pub, bar, or entertainment venue</p>
                 </div>
               </div>
               <p className="contact-note">
@@ -228,7 +228,7 @@ export default function Home() {
                 <span className="benefit-number">3</span>
                 <div>
                   <h3>Shape the Product</h3>
-                  <p>Your feedback will help shape the future of BigFish Darts</p>
+                  <p>Your feedback will help shape the future of Big Fish Darts</p>
                 </div>
               </div>
               <div className="benefit-box">
