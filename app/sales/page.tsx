@@ -11,7 +11,7 @@ export default function SalesPage() {
 
       <div className="container">
         <header className="signup-hero">
-          <h1 className="signup-title">💰 BigFish Darts Pricing</h1>
+          <h1 className="signup-title">BigFish Darts Pricing</h1>
           <p className="signup-subtitle">Flexible packages tailored to your event needs</p>
         </header>
 
@@ -97,7 +97,7 @@ export default function SalesPage() {
               </div>
 
               <div className="pricing-card featured" style={{ borderColor: 'var(--union-red)', borderWidth: '4px', background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.15) 0%, rgba(0, 48, 130, 0.15) 100%)' }}>
-                <div className="pricing-badge" style={{ background: 'var(--union-red)', fontSize: '1rem', padding: '0.6rem 2rem' }}>🌟 Exclusive</div>
+                <div className="pricing-badge" style={{ background: 'var(--union-red)', fontSize: '1rem', padding: '0.6rem 2rem' }}>Exclusive</div>
                 <div className="pricing-header">
                   <h3>Legends Package</h3>
                   <div className="pricing-price">
@@ -128,25 +128,25 @@ export default function SalesPage() {
           {/* Legends Package Highlight */}
           <div className="request-info-section">
             <div className="request-info-card" style={{ background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(0, 48, 130, 0.2) 100%)', borderColor: 'var(--union-red)', borderWidth: '3px' }}>
-              <h2 style={{ color: 'var(--union-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>🌟 Legends Package - Exclusive Experience</h2>
+              <h2 style={{ color: 'var(--union-white)', fontSize: '2.5rem', marginBottom: '1rem' }}>Legends Package - Exclusive Experience</h2>
               <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
                 Take your event to the next level with an exclusive appearance from a retired darts legend. This once-in-a-lifetime experience includes meet & greets, exhibition matches, and unforgettable memories.
               </p>
               <div className="request-benefits">
                 <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
-                  <strong>🏆 Darts Legend</strong>
+                  <strong>Darts Legend</strong>
                   <p>Appearance from a retired professional darts player</p>
                 </div>
                 <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
-                  <strong>📸 Photo Opportunities</strong>
+                  <strong>Photo Opportunities</strong>
                   <p>Professional photos with the legend</p>
                 </div>
                 <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
-                  <strong>🎯 Exhibition Matches</strong>
+                  <strong>Exhibition Matches</strong>
                   <p>Watch the legend play live</p>
                 </div>
                 <div className="request-benefit" style={{ background: 'rgba(220, 20, 60, 0.2)', borderLeftColor: 'var(--union-red)' }}>
-                  <strong>✍️ Autographs</strong>
+                  <strong>Autographs</strong>
                   <p>Signed memorabilia and autograph sessions</p>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function SalesPage() {
             
             <div className="services-grid">
               <div className="service-card">
-                <div className="service-icon">📸</div>
+                <div className="service-icon">1</div>
                 <h3>Photography & Videography</h3>
                 <p>Professional event coverage to capture all the action.</p>
                 <ul>
@@ -179,7 +179,7 @@ export default function SalesPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">🎁</div>
+                <div className="service-icon">2</div>
                 <h3>Prize Packages</h3>
                 <p>Custom prize packages to motivate your players.</p>
                 <ul>
@@ -190,7 +190,7 @@ export default function SalesPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">🎨</div>
+                <div className="service-icon">3</div>
                 <h3>Event Theming</h3>
                 <p>Transform your venue with custom theming.</p>
                 <ul>
@@ -201,7 +201,7 @@ export default function SalesPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">📊</div>
+                <div className="service-icon">4</div>
                 <h3>Analytics & Reporting</h3>
                 <p>Detailed insights into your event&apos;s performance.</p>
                 <ul>
@@ -222,19 +222,19 @@ export default function SalesPage() {
               </p>
               <div className="request-benefits">
                 <div className="request-benefit">
-                  <strong>💬 Free Consultation</strong>
+                  <strong>Free Consultation</strong>
                   <p>Discuss your event requirements</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>📋 Custom Packages</strong>
+                  <strong>Custom Packages</strong>
                   <p>Tailored to your venue and budget</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>🎯 Flexible Options</strong>
+                  <strong>Flexible Options</strong>
                   <p>Mix and match services as needed</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>⚡ Quick Response</strong>
+                  <strong>Quick Response</strong>
                   <p>Fast turnaround on quotes and inquiries</p>
                 </div>
               </div>

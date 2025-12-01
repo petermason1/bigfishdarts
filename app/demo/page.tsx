@@ -11,7 +11,7 @@ export default function DemoPage() {
 
       <div className="container">
         <header className="signup-hero">
-          <h1 className="signup-title">🎯 BigFish Darts Demo</h1>
+          <h1 className="signup-title">BigFish Darts Demo</h1>
           <p className="signup-subtitle">Preview of our revolutionary darts gaming platform</p>
           <div className="coming-soon-badge" style={{ background: 'var(--union-blue)' }}>Coming Soon</div>
         </header>
@@ -35,28 +35,28 @@ export default function DemoPage() {
 
               <div className="demo-features">
                 <div className="demo-feature-item">
-                  <span className="demo-icon">📹</span>
+                  <span className="demo-icon">1</span>
                   <div>
                     <h3>Live Camera Integration</h3>
                     <p>View the dartboard through your phone&apos;s camera in real-time</p>
                   </div>
                 </div>
                 <div className="demo-feature-item">
-                  <span className="demo-icon">🎤</span>
+                  <span className="demo-icon">2</span>
                   <div>
                     <h3>Voice Communication</h3>
                     <p>Connect with other players via WiFi for real-time voice chat</p>
                   </div>
                 </div>
                 <div className="demo-feature-item">
-                  <span className="demo-icon">📊</span>
+                  <span className="demo-icon">3</span>
                   <div>
                     <h3>Real-time Scoring</h3>
                     <p>Automatic score tracking and leaderboards</p>
                   </div>
                 </div>
                 <div className="demo-feature-item">
-                  <span className="demo-icon">🏆</span>
+                  <span className="demo-icon">4</span>
                   <div>
                     <h3>Competitions & Tournaments</h3>
                     <p>Organize and participate in darts competitions</p>
@@ -71,7 +71,7 @@ export default function DemoPage() {
             <h2>Perfect For</h2>
             <div className="use-cases-grid">
               <div className="use-case-card">
-                <div className="use-case-icon">🏢</div>
+                <div className="use-case-icon">1</div>
                 <h3>Corporate Events</h3>
                 <p>Team building activities, client entertainment, and company gatherings</p>
                 <ul>
@@ -82,7 +82,7 @@ export default function DemoPage() {
               </div>
               
               <div className="use-case-card">
-                <div className="use-case-icon">🍺</div>
+                <div className="use-case-icon">2</div>
                 <h3>Pub Nights</h3>
                 <p>Transform your venue into an interactive gaming experience</p>
                 <ul>
@@ -93,7 +93,7 @@ export default function DemoPage() {
               </div>
               
               <div className="use-case-card">
-                <div className="use-case-icon">🏆</div>
+                <div className="use-case-icon">3</div>
                 <h3>Competitions</h3>
                 <p>Organize professional darts tournaments and events</p>
                 <ul>
@@ -104,7 +104,7 @@ export default function DemoPage() {
               </div>
               
               <div className="use-case-card">
-                <div className="use-case-icon">🎉</div>
+                <div className="use-case-icon">4</div>
                 <h3>Special Events</h3>
                 <p>Perfect for birthdays, celebrations, and private parties</p>
                 <ul>
@@ -125,7 +125,7 @@ export default function DemoPage() {
             
             <div className="services-grid">
               <div className="service-card">
-                <div className="service-icon">💻</div>
+                <div className="service-icon">1</div>
                 <h3>Software Setup</h3>
                 <p>We set up all the software ready for your competition. No technical knowledge needed - we handle everything from installation to configuration.</p>
                 <ul>
@@ -137,7 +137,7 @@ export default function DemoPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">📱</div>
+                <div className="service-icon">2</div>
                 <h3>Social Media & Marketing</h3>
                 <p>We manage your social media and provide professional posters and advertisements to promote your event.</p>
                 <ul>
@@ -149,7 +149,7 @@ export default function DemoPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">🎤</div>
+                <div className="service-icon">3</div>
                 <h3>Event Hosting</h3>
                 <p>Run the event with our optional compare (MC) for the evening, or host it yourself - the choice is yours.</p>
                 <ul>
@@ -161,7 +161,7 @@ export default function DemoPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">📺</div>
+                <div className="service-icon">4</div>
                 <h3>Video Screens</h3>
                 <p>Video screens with Tony off Bullseye - professional presentation and live scoring display.</p>
                 <ul>
@@ -173,7 +173,7 @@ export default function DemoPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">🍕</div>
+                <div className="service-icon">5</div>
                 <h3>Catering & Bar Service</h3>
                 <p>Catering and alcohol service available for unlicensed premises. We can arrange everything.</p>
                 <ul>
@@ -185,7 +185,7 @@ export default function DemoPage() {
               </div>
               
               <div className="service-card">
-                <div className="service-icon">✨</div>
+                <div className="service-icon">6</div>
                 <h3>Custom Solutions</h3>
                 <p>We can meet most needs. Contact us to discuss your specific requirements and we&apos;ll create a tailored package.</p>
                 <ul>
@@ -200,7 +200,7 @@ export default function DemoPage() {
             {/* Legends Package Highlight */}
             <div style={{ marginTop: '3rem', textAlign: 'center' }}>
               <div className="service-card" style={{ background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(0, 48, 130, 0.2) 100%)', borderColor: 'var(--union-red)', borderWidth: '3px', maxWidth: '900px', margin: '0 auto' }}>
-                <div className="service-icon" style={{ fontSize: '4rem' }}>🌟</div>
+                <div className="service-icon" style={{ fontSize: '4rem' }}>★</div>
                 <h3 style={{ fontSize: '2rem', color: 'var(--union-white)', marginBottom: '1rem' }}>Legends Package - Exclusive Experience</h3>
                 <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>
                   Bring a retired darts legend to your event! This exclusive package includes meet & greets, exhibition matches, photo opportunities, and unforgettable memories with a true darts icon.
@@ -230,19 +230,19 @@ export default function DemoPage() {
               </p>
               <div className="request-benefits">
                 <div className="request-benefit">
-                  <strong>📋 Custom Quotes</strong>
+                  <strong>Custom Quotes</strong>
                   <p>Get a personalized quote for your event</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>💬 Consultation</strong>
+                  <strong>Consultation</strong>
                   <p>Discuss your specific needs and requirements</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>🎯 Flexible Packages</strong>
+                  <strong>Flexible Packages</strong>
                   <p>Choose the services that work for you</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>⚡ Quick Response</strong>
+                  <strong>Quick Response</strong>
                   <p>Fast turnaround on quotes and inquiries</p>
                 </div>
               </div>
@@ -257,19 +257,19 @@ export default function DemoPage() {
             <h2>Technical Features</h2>
             <div className="tech-features-grid">
               <div className="tech-feature">
-                <h3>🌐 WebRTC Technology</h3>
+                <h3>WebRTC Technology</h3>
                 <p>Real-time peer-to-peer communication for voice and video</p>
               </div>
               <div className="tech-feature">
-                <h3>📱 Mobile First</h3>
+                <h3>Mobile First</h3>
                 <p>Optimized for phones and tablets with responsive design</p>
               </div>
               <div className="tech-feature">
-                <h3>☁️ Cloud Infrastructure</h3>
+                <h3>Cloud Infrastructure</h3>
                 <p>Scalable backend for handling multiple concurrent games</p>
               </div>
               <div className="tech-feature">
-                <h3>🔒 Secure & Private</h3>
+                <h3>Secure & Private</h3>
                 <p>End-to-end encryption for all communications</p>
               </div>
             </div>

@@ -17,101 +17,73 @@ body {
     background: linear-gradient(135deg, var(--union-dark-blue) 0%, var(--union-blue) 50%, var(--union-dark-blue) 100%);
     min-height: 100vh;
     color: var(--union-white);
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-/* Navigation - Dartboard Double Bed Style with Felt Texture */
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Navigation - Clean Professional Style */
 .nav {
-    background: 
-        /* Felt texture */
-        repeating-linear-gradient(
-            45deg,
-            rgba(0, 0, 0, 0.1) 0px,
-            rgba(0, 0, 0, 0.1) 1px,
-            transparent 1px,
-            transparent 2px
-        ),
-        repeating-linear-gradient(
-            -45deg,
-            rgba(0, 0, 0, 0.1) 0px,
-            rgba(0, 0, 0, 0.1) 1px,
-            transparent 1px,
-            transparent 2px
-        ),
-        /* Red felt base */
-        linear-gradient(135deg, 
-            rgba(220, 20, 60, 0.95) 0%, 
-            rgba(200, 20, 50, 0.95) 25%,
-            rgba(220, 20, 60, 0.95) 50%,
-            rgba(200, 20, 50, 0.95) 75%,
-            rgba(220, 20, 60, 0.95) 100%
-        ),
-        /* Base red */
-        var(--union-red);
-    backdrop-filter: blur(5px);
+    background: linear-gradient(135deg, 
+        var(--union-red) 0%, 
+        rgba(200, 20, 50, 0.95) 50%,
+        var(--union-red) 100%
+    );
+    backdrop-filter: blur(8px);
     padding: 1.2rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 
-        0 2px 20px rgba(0,0,0,0.6),
-        inset 0 1px 3px rgba(255, 255, 255, 0.15),
-        inset 0 -1px 3px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(0, 0, 0, 0.2);
+        0 2px 10px rgba(0,0,0,0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border-top: 4px solid;
-    border-bottom: 4px solid;
-    border-image: linear-gradient(90deg, 
-        #8B7355 0%, 
-        #A0826D 10%, 
-        #B8956F 20%, 
-        #C9A882 30%, 
-        #D4B896 40%, 
-        #C9A882 50%, 
-        #B8956F 60%, 
-        #A0826D 70%, 
-        #8B7355 80%, 
-        #7A6348 90%, 
-        #8B7355 100%
-    ) 1;
+    border-top: 2px solid rgba(139, 115, 85, 0.6);
+    border-bottom: 2px solid rgba(139, 115, 85, 0.6);
     position: relative;
 }
 
-/* Metal wire border effect */
+/* Subtle border accent */
 .nav::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    border-top: 3px solid;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(90deg,
-        rgba(139, 115, 85, 0.9) 0%,
-        rgba(184, 149, 111, 0.95) 25%,
-        rgba(212, 184, 150, 1) 50%,
-        rgba(184, 149, 111, 0.95) 75%,
-        rgba(139, 115, 85, 0.9) 100%
-    ) 1;
-    pointer-events: none;
-    box-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.4),
-        inset 0 1px 2px rgba(255, 255, 255, 0.3),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.4);
-}
-
-.nav::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 0;
-    right: 0;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(90deg,
         transparent 0%,
-        rgba(212, 184, 150, 0.6) 20%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(212, 184, 150, 0.6) 80%,
+        rgba(255, 255, 255, 0.2) 50%,
         transparent 100%
     );
     pointer-events: none;
@@ -455,17 +427,62 @@ body {
         0 0 0 1px rgba(212, 184, 150, 0.8);
 }
 
+/* CSS-based Target/Bullseye Icon */
 .target-icon {
-    font-size: 1.8rem;
-    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    line-height: 1;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.target-ring {
+    position: absolute;
+    border: 2px solid var(--union-white);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.target-ring-outer {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+}
+
+.target-ring-middle {
+    width: 16px;
+    height: 16px;
+    opacity: 0.9;
+}
+
+.target-ring-inner {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+}
+
+.target-center {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--union-white);
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.nav-toggle:hover .target-icon .target-ring {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 1);
 }
 
 .nav-toggle.active .target-icon {
-    transform: rotate(180deg) scale(1.2);
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.8)) brightness(1.2);
+    transform: rotate(90deg);
+}
+
+.nav-toggle.active .target-icon .target-ring {
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .nav-link {
@@ -541,7 +558,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 2rem;
     width: 100%;
     box-sizing: border-box;
 }
@@ -583,10 +600,10 @@ header h1 {
 
 .game-room {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     border-radius: 20px;
     padding: 2rem;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     border: 2px solid var(--union-red);
 }
 
@@ -1082,32 +1099,33 @@ header h1 {
 }
 
 .signup-title {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     background: linear-gradient(135deg, var(--union-white), var(--union-red));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
 }
 
 .signup-title::before {
-    content: '🎯';
-    display: inline-block;
-    margin-right: 0.5rem;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    display: none;
 }
 
 .signup-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     opacity: 0.95;
     color: var(--union-white);
     margin-bottom: 1.5rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
 }
 
 .coming-soon-badge {
@@ -1124,7 +1142,7 @@ header h1 {
 }
 
 .signup-section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -1133,10 +1151,10 @@ header h1 {
 
 .signup-card {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     border-radius: 20px;
     padding: 3rem;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     border: 2px solid var(--union-red);
     max-width: 650px;
     margin: 0 auto;
@@ -1270,7 +1288,7 @@ header h1 {
 }
 
 .features-preview {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -1319,8 +1337,18 @@ header h1 {
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--union-red);
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 2px solid var(--union-red);
 }
 
 .feature-card h3 {
@@ -1642,7 +1670,17 @@ header h1 {
 
 .demo-icon {
     font-size: 2rem;
+    font-weight: 700;
+    color: var(--union-red);
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    border: 2px solid var(--union-red);
 }
 
 .demo-feature-item h3 {
@@ -1695,10 +1733,18 @@ header h1 {
 }
 
 .use-case-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--union-red);
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 2px solid var(--union-red);
 }
 
 .use-case-card h3 {
@@ -1767,7 +1813,8 @@ header h1 {
 
 /* Services Section */
 .services-section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
 }
 
 .services-section h2 {
@@ -1795,7 +1842,7 @@ header h1 {
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    align-items: start;
+    align-items: stretch;
 }
 
 /* For 4 items: 2x2 grid - symmetric layout */
@@ -1808,7 +1855,7 @@ header h1 {
 .service-card {
     width: 100%;
     max-width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -1822,9 +1869,18 @@ header h1 {
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--union-red);
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 2px solid var(--union-red);
 }
 
 .service-card h3 {
@@ -1845,7 +1901,7 @@ header h1 {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-grow: 1;
+    flex: 1;
 }
 
 .service-card ul li {
@@ -1984,6 +2040,7 @@ header h1 {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 4rem;
+    align-items: stretch;
 }
 
 /* For 4 items: 2x2 grid (default above) */
@@ -1998,12 +2055,12 @@ header h1 {
     display: flex;
     flex-direction: column;
     position: relative;
+    min-height: 100%;
 }
 
 .pricing-card.featured {
     border-color: var(--union-red);
     border-width: 3px;
-    transform: scale(1.05);
     box-shadow: 0 20px 50px rgba(220, 20, 60, 0.4);
 }
 
@@ -2014,7 +2071,7 @@ header h1 {
 }
 
 .pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .pricing-badge {
@@ -2063,8 +2120,10 @@ header h1 {
 }
 
 .pricing-features {
-    flex-grow: 1;
+    flex: 1;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .pricing-features ul {
@@ -2083,14 +2142,14 @@ header h1 {
 }
 
 .pricing-features ul li::before {
-    content: '';
+    content: '✓';
     position: absolute;
     left: 0;
-    top: 0.9rem;
-    width: 8px;
-    height: 8px;
-    background: var(--union-red);
-    border-radius: 50%;
+    top: 0.75rem;
+    color: var(--union-red);
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1;
 }
 
 .pricing-button {
@@ -2108,6 +2167,7 @@ header h1 {
     box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: auto;
 }
 
 .pricing-button:hover {
@@ -2246,10 +2306,13 @@ header h1 {
 }
 
 .comp-rules ul li::before {
-    content: '🎯';
+    content: '✓';
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
+    color: var(--union-red);
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1;
 }
 
 .comp-submit {

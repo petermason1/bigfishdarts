@@ -11,7 +11,7 @@ export default function CoachingPage() {
 
       <div className="container">
         <header className="signup-hero">
-          <h1 className="signup-title">🎯 Video Coaching & Throw Analysis</h1>
+          <h1 className="signup-title">Video Coaching & Throw Analysis</h1>
           <p className="signup-subtitle">Improve your game with professional video analysis and personalized coaching</p>
         </header>
 
@@ -26,7 +26,7 @@ export default function CoachingPage() {
               
               <div className="services-grid" style={{ marginTop: '2rem' }}>
                 <div className="service-card">
-                  <div className="service-icon">📹</div>
+                  <div className="service-icon">1</div>
                   <h3>Video Review</h3>
                   <p>Submit videos of your throws for detailed professional analysis.</p>
                   <ul>
@@ -38,7 +38,7 @@ export default function CoachingPage() {
                 </div>
                 
                 <div className="service-card">
-                  <div className="service-icon">✈️</div>
+                  <div className="service-icon">2</div>
                   <h3>Flight Tracking</h3>
                   <p>Advanced technology tracks your dart&apos;s flight path to identify issues.</p>
                   <ul>
@@ -50,7 +50,7 @@ export default function CoachingPage() {
                 </div>
                 
                 <div className="service-card">
-                  <div className="service-icon">🔍</div>
+                  <div className="service-icon">3</div>
                   <h3>Error Detection</h3>
                   <p>Identify what you&apos;re doing wrong with pinpoint accuracy.</p>
                   <ul>
@@ -62,7 +62,7 @@ export default function CoachingPage() {
                 </div>
                 
                 <div className="service-card">
-                  <div className="service-icon">💬</div>
+                  <div className="service-icon">4</div>
                   <h3>Online Coaching</h3>
                   <p>One-on-one coaching sessions with professional darts coaches.</p>
                   <ul>
@@ -81,25 +81,25 @@ export default function CoachingPage() {
             <h2>How It Works</h2>
             <div className="services-grid">
               <div className="service-card">
-                <div className="service-icon">1️⃣</div>
+                <div className="service-icon">1</div>
                 <h3>Record Your Throws</h3>
                 <p>Record videos of your throwing technique from multiple angles. We&apos;ll guide you on the best camera positions.</p>
               </div>
               
               <div className="service-card">
-                <div className="service-icon">2️⃣</div>
+                <div className="service-icon">2</div>
                 <h3>Upload & Analysis</h3>
                 <p>Upload your videos through our platform. Our AI and expert coaches analyze every aspect of your throw.</p>
               </div>
               
               <div className="service-card">
-                <div className="service-icon">3️⃣</div>
+                <div className="service-icon">3</div>
                 <h3>Detailed Report</h3>
                 <p>Receive a comprehensive analysis report with visual annotations, identified issues, and improvement recommendations.</p>
               </div>
               
               <div className="service-card">
-                <div className="service-icon">4️⃣</div>
+                <div className="service-icon">4</div>
                 <h3>Coaching Session</h3>
                 <p>Book a live coaching session to discuss your analysis, get personalized tips, and create a training plan.</p>
               </div>
@@ -111,7 +111,7 @@ export default function CoachingPage() {
             <h2>What We Analyze</h2>
             <div className="use-cases-grid">
               <div className="use-case-card">
-                <div className="use-case-icon">🎯</div>
+                <div className="use-case-icon">1</div>
                 <h3>Stance & Posture</h3>
                 <p>Analyze your body position, balance, and alignment for optimal throwing position.</p>
                 <ul>
@@ -123,7 +123,7 @@ export default function CoachingPage() {
               </div>
               
               <div className="use-case-card">
-                <div className="use-case-icon">✋</div>
+                <div className="use-case-icon">2</div>
                 <h3>Grip & Release</h3>
                 <p>Examine how you hold and release the dart for consistency and accuracy.</p>
                 <ul>
@@ -135,7 +135,7 @@ export default function CoachingPage() {
               </div>
               
               <div className="use-case-card">
-                <div className="use-case-icon">📐</div>
+                <div className="use-case-icon">3</div>
                 <h3>Throwing Motion</h3>
                 <p>Break down your throwing motion to identify inefficiencies and improve power.</p>
                 <ul>
@@ -147,7 +147,7 @@ export default function CoachingPage() {
               </div>
               
               <div className="use-case-card">
-                <div className="use-case-icon">📊</div>
+                <div className="use-case-icon">4</div>
                 <h3>Flight Path</h3>
                 <p>Track your dart&apos;s flight to understand trajectory and identify release issues.</p>
                 <ul>
@@ -230,6 +230,30 @@ export default function CoachingPage() {
                   Get Started
                 </Link>
               </div>
+
+              <div className="pricing-card">
+                <div className="pricing-header">
+                  <h3>Elite Coaching</h3>
+                  <div className="pricing-price">
+                    <span className="price-amount">£399</span>
+                    <span className="price-period">per month</span>
+                  </div>
+                </div>
+                <div className="pricing-features">
+                  <ul>
+                    <li>✓ Everything in Premium</li>
+                    <li>✓ Daily coaching check-ins</li>
+                    <li>✓ Unlimited video analysis</li>
+                    <li>✓ 1-on-1 live sessions (2x/week)</li>
+                    <li>✓ Performance analytics</li>
+                    <li>✓ Competition preparation</li>
+                    <li>✓ Mental game coaching</li>
+                  </ul>
+                </div>
+                <Link href="/" className="pricing-button">
+                  Get Started
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -242,19 +266,19 @@ export default function CoachingPage() {
               </p>
               <div className="request-benefits">
                 <div className="request-benefit">
-                  <strong>🎯 Expert Analysis</strong>
+                  <strong>Expert Analysis</strong>
                   <p>Professional coaches review your technique</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>📈 Track Progress</strong>
+                  <strong>Track Progress</strong>
                   <p>See measurable improvements over time</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>💡 Personalized Tips</strong>
+                  <strong>Personalized Tips</strong>
                   <p>Get advice tailored to your specific needs</p>
                 </div>
                 <div className="request-benefit">
-                  <strong>🏆 Improve Faster</strong>
+                  <strong>Improve Faster</strong>
                   <p>Identify and fix issues quickly</p>
                 </div>
               </div>
