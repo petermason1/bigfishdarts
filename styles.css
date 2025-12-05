@@ -25,6 +25,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Account for fixed navbar */
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-blue) 30%, var(--primary-blue) 60%, var(--dark-bg) 100%);
@@ -1511,6 +1516,95 @@ header h1 {
         0 0 60px rgba(220, 20, 60, 0.6),
         inset 0 2px 4px rgba(255, 255, 255, 0.3);
     border-color: rgba(212, 175, 55, 0.8);
+}
+
+/* Hero CTA Container */
+.hero-cta-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-primary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary-red) 0%, #B01030 100%);
+    color: var(--primary-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 24px rgba(220, 20, 60, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.hero-primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 32px rgba(220, 20, 60, 0.5),
+        0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #E02050 0%, var(--primary-red) 100%);
+}
+
+.hero-primary-cta:active {
+    transform: translateY(-1px);
+}
+
+.hero-secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.hero-secondary-cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--primary-white);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .hero-cta-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-primary-cta {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
+    }
+
+    .hero-secondary-cta {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.95rem;
+        padding: 0.9rem 2rem;
+    }
 }
 
 @keyframes logoFloat {

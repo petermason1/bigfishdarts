@@ -49,21 +49,28 @@ export default function Home() {
           <div className="hero-logo-container">
             <img src="/logo.jpeg" alt="Big Fish Darts Logo" className="hero-logo" />
           </div>
-          <h1 className="signup-title">The Future of Darts is Coming</h1>
+          <h1 className="signup-title">Join the Big Fish League</h1>
           <p className="signup-subtitle">
-            Revolutionary darts gaming experience for corporate events, pub nights, and competitive play
+            Start playing in minutes. Join thousands of players in the revolutionary darts gaming experience.
           </p>
-          <div className="coming-soon-badge">Coming Soon</div>
+          <div className="hero-cta-container">
+            <Link href="#signup" className="hero-primary-cta">
+              Join the Revolution
+            </Link>
+            <a href="#venues" className="hero-secondary-cta">
+              Host at my venue
+            </a>
+          </div>
         </header>
 
         <main>
           {/* Sign Up Form */}
-          <div className="signup-section">
+          <div id="signup" className="signup-section">
             <div className="signup-card">
-              <h2>Be the First to Know</h2>
+              <h2>Join the Revolution</h2>
               <p className="signup-description">
-                We&apos;re building something special. Join our early access list to be notified when we launch 
-                and get exclusive updates about our revolutionary darts platform.
+                Be among the first to experience Big Fish Darts. Join our early access list to start playing 
+                in minutes and get exclusive updates about our revolutionary darts platform.
               </p>
               
               {!submitted ? (
@@ -177,6 +184,45 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Venue Section */}
+          <div id="venues" className="partnership-section">
+            <div className="partnership-card">
+              <h2>Host Games at Your Venue</h2>
+              <p>
+                Bring Big Fish Darts to your pub, bar, or entertainment venue. Engage customers, increase dwell time, 
+                and create memorable experiences with our revolutionary darts platform.
+              </p>
+              <div className="partnership-benefits">
+                <div className="benefit-item">
+                  <strong>Increase Customer Engagement</strong>
+                  <p>Transform your venue into an interactive gaming experience</p>
+                </div>
+                <div className="benefit-item">
+                  <strong>Complete Event Package</strong>
+                  <p>We provide software setup, marketing, and event hosting support</p>
+                </div>
+                <div className="benefit-item">
+                  <strong>Flexible Solutions</strong>
+                  <p>Custom packages tailored to your venue&apos;s needs</p>
+                </div>
+              </div>
+              <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <Link href="/demo" className="signup-button" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                  Book a Demo
+                </Link>
+                <Link href="/sales" className="signup-button" style={{ 
+                  textDecoration: 'none', 
+                  display: 'inline-block',
+                  background: 'transparent',
+                  border: '2px solid var(--primary-red)',
+                  color: 'var(--primary-red)'
+                }}>
+                  View Pricing
+                </Link>
+              </div>
+            </div>
+          </div>
+
           {/* Partnership Section */}
           <div className="partnership-section">
             <div className="partnership-card">
@@ -238,6 +284,24 @@ export default function Home() {
                   <p>Early supporters may receive special pricing and exclusive benefits</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Final CTA Section */}
+          <div className="signup-section" style={{ marginTop: '4rem' }}>
+            <div className="signup-card" style={{ textAlign: 'center', background: 'linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(0, 48, 130, 0.2) 100%)', border: '2px solid var(--primary-red)' }}>
+              <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Ready to Join the Revolution?</h2>
+              <p style={{ fontSize: '1.2rem', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
+                Start playing in minutes. Join thousands of players already experiencing the future of darts.
+              </p>
+              <Link href="#signup" className="signup-button" style={{ 
+                fontSize: '1.3rem',
+                padding: '1.2rem 3rem',
+                textDecoration: 'none',
+                display: 'inline-block'
+              }}>
+                Join the Revolution
+              </Link>
             </div>
           </div>
         </main>
