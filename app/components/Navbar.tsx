@@ -16,14 +16,15 @@ interface NavbarProps {
   onCtaClick?: () => void
 }
 
+// COMMENTED OUT - Navigation links hidden during development
 const defaultLinks: NavLink[] = [
-  { href: '/', label: 'Join Us' },
-  { href: '/demo', label: 'Demo' },
-  { href: '/sales', label: 'Pricing' },
-  { href: '/comp', label: 'Competition' },
-  { href: '/bullseye', label: 'Bullseye Game' },
-  { href: '/shop', label: 'Shop' },
-  { href: '/dart-swap', label: 'Dart Swap' },
+  // { href: '/', label: 'Join Us' },
+  // { href: '/demo', label: 'Demo' },
+  // { href: '/sales', label: 'Pricing' },
+  // { href: '/comp', label: 'Competition' },
+  // { href: '/bullseye', label: 'Bullseye Game' },
+  // { href: '/shop', label: 'Shop' },
+  // { href: '/dart-swap', label: 'Dart Swap' },
 ]
 
 export default function Navbar({ 
@@ -95,8 +96,8 @@ export default function Navbar({
           <span className="navbar-logo-text">Big Fish Darts</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <ul className="navbar-menu" aria-label="Navigation menu">
+        {/* COMMENTED OUT - Desktop Navigation */}
+        {/* <ul className="navbar-menu" aria-label="Navigation menu">
           {links.map((link) => (
             <li key={link.href}>
               <Link 
@@ -109,10 +110,10 @@ export default function Navbar({
               </Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
 
-        {/* CTA Button - Desktop */}
-        <div className="navbar-cta-desktop">
+        {/* COMMENTED OUT - CTA Button - Desktop */}
+        {/* <div className="navbar-cta-desktop">
           <Link
             href={ctaHref}
             className="navbar-cta-button"
@@ -121,10 +122,10 @@ export default function Navbar({
           >
             {ctaLabel}
           </Link>
-        </div>
+        </div> */}
 
-        {/* Mobile Hamburger Button */}
-        <button 
+        {/* COMMENTED OUT - Mobile Hamburger Button */}
+        {/* <button 
           className={`navbar-toggle ${navOpen ? 'active' : ''}`}
           onClick={toggleNav}
           aria-label={navOpen ? 'Close menu' : 'Open menu'}
@@ -134,11 +135,11 @@ export default function Navbar({
           <span className="navbar-toggle-line" />
           <span className="navbar-toggle-line" />
           <span className="navbar-toggle-line" />
-        </button>
+        </button> */}
       </nav>
 
-      {/* Mobile Menu */}
-      <div 
+      {/* COMMENTED OUT - Mobile Menu */}
+      {/* <div 
         id="mobile-menu"
         className={`navbar-mobile-menu ${navOpen ? 'active' : ''}`}
         aria-hidden={!navOpen}
@@ -157,7 +158,6 @@ export default function Navbar({
           ))}
         </ul>
         
-        {/* CTA Button - Mobile */}
         <div className="navbar-cta-mobile">
           <Link
             href={ctaHref}
@@ -169,14 +169,13 @@ export default function Navbar({
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {navOpen && (
         <div 
           className="navbar-overlay"
           onClick={closeNav}
           aria-hidden="true"
         />
-      )}
+      )} */}
     </header>
   )
 }

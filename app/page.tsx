@@ -1,11 +1,39 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 export default function Home() {
+  return (
+    <>
+      <Navbar />
+
+      <div className="container">
+        <header className="signup-hero" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ textAlign: 'center', maxWidth: '800px' }}>
+            <div className="hero-logo-container" style={{ marginBottom: '2rem' }}>
+              <img src="/logo.jpeg" alt="Big Fish Darts Logo" className="hero-logo" />
+            </div>
+            <h1 className="signup-title" style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>
+              Under Development
+            </h1>
+            <p className="signup-subtitle" style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
+              We&apos;re working hard to bring you something amazing. 
+              <br />
+              Check back soon!
+            </p>
+            <div className="coming-soon-badge" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
+              Coming Soon
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <Footer />
+    </>
+  )
+
+  /* COMMENTED OUT - Original landing page code
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -67,7 +95,6 @@ export default function Home() {
       <Navbar />
 
       <div className="home-container">
-        {/* Hero Section */}
         <section className="home-hero">
           <div className="home-hero-content">
             <h1 className="home-hero-title">
@@ -92,7 +119,6 @@ export default function Home() {
         </section>
 
         <main>
-          {/* How It Works Section */}
           <section id="how-it-works" className="home-section">
             <div className="home-section-content">
               <h2 className="home-section-title">How it works</h2>
@@ -121,7 +147,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Key Benefits Section */}
           <section className="home-section home-section-alt">
             <div className="home-section-content">
               <h2 className="home-section-title">Why Big Fish Darts?</h2>
@@ -154,7 +179,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Features Section */}
           <section className="home-section">
             <div className="home-section-content">
               <h2 className="home-section-title">Everything you need</h2>
@@ -199,7 +223,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Social Proof / Testimonials */}
           <section className="home-section home-section-alt">
             <div className="home-section-content">
               <h2 className="home-section-title">What people are saying</h2>
@@ -241,7 +264,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* FAQ Section */}
           <section className="home-section home-section-alt">
             <div className="home-section-content">
               <h2 className="home-section-title">Frequently asked questions</h2>
@@ -273,7 +295,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Sign Up Form Section */}
           <section id="signup" className="home-section">
             <div className="home-section-content">
               <div className="home-signup-card">
@@ -371,7 +392,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Final CTA Section */}
           <section className="home-section">
             <div className="home-section-content">
               <div className="home-final-cta">
@@ -392,4 +412,5 @@ export default function Home() {
       <Footer />
     </>
   )
+  */
 }
