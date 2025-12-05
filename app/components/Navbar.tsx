@@ -1,12 +1,62 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export default function Navbar() {
+interface NavLink {
+  href: string
+  label: string
+}
+
+interface NavbarProps {
+  links?: NavLink[]
+  ctaLabel?: string
+  ctaHref?: string
+  onCtaClick?: () => void
+}
+
+const defaultLinks: NavLink[] = [
+  { href: '/', label: 'Join Us' },
+  { href: '/demo', label: 'Demo' },
+  { href: '/sales', label: 'Pricing' },
+  { href: '/comp', label: 'Competition' },
+  { href: '/coaching', label: 'Coaching' },
+  { href: '/bullseye', label: 'Bullseye Game' },
+  { href: '/shop', label: 'Shop' },
+  { href: '/dart-swap', label: 'Dart Swap' },
+]
+
+export default function Navbar({ 
+  links = defaultLinks, 
+  ctaLabel = 'Join the Revolution',
+  ctaHref = '/',
+  onCtaClick
+}: NavbarProps) {
   const [navOpen, setNavOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
+  
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [navOpen])
   
   const toggleNav = () => {
     setNavOpen(!navOpen)
@@ -22,69 +72,112 @@ export default function Navbar() {
     return false
   }
 
+  const handleCtaClick = () => {
+    closeNav()
+    if (onCtaClick) {
+      onCtaClick()
+    }
+  }
+
   return (
-    <nav className="nav">
-      <div className="nav-container">
-        <Link href="/" className="nav-logo">
-          <img src="/logo.jpeg" alt="Big Fish Darts" className="logo-image" />
-          <span className="logo-text">Big Fish Darts</span>
-        </Link>
-        <button 
-          className={`nav-toggle ${navOpen ? 'active' : ''}`} 
-          onClick={toggleNav} 
-          aria-label="Toggle navigation"
+    <header 
+      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
+      role="banner"
+    >
+      <nav className="navbar-container" aria-label="Main navigation">
+        {/* Logo */}
+        <Link 
+          href="/" 
+          className="navbar-logo"
+          onClick={closeNav}
+          aria-label="Big Fish Darts Home"
         >
-          <div className="target-icon">
-            <span className="target-ring target-ring-outer"></span>
-            <span className="target-ring target-ring-middle"></span>
-            <span className="target-ring target-ring-inner"></span>
-            <span className="target-center"></span>
-          </div>
-        </button>
-        <ul className={`nav-menu ${navOpen ? 'active' : ''}`}>
-          <li>
-            <Link href="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={closeNav}>
-              Join Us
-            </Link>
-          </li>
-          <li>
-            <Link href="/demo" className={`nav-link ${isActive('/demo') ? 'active' : ''}`} onClick={closeNav}>
-              Demo
-            </Link>
-          </li>
-          <li>
-            <Link href="/sales" className={`nav-link ${isActive('/sales') ? 'active' : ''}`} onClick={closeNav}>
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link href="/comp" className={`nav-link ${isActive('/comp') ? 'active' : ''}`} onClick={closeNav}>
-              Competition
-            </Link>
-          </li>
-          <li>
-            <Link href="/coaching" className={`nav-link ${isActive('/coaching') ? 'active' : ''}`} onClick={closeNav}>
-              Coaching
-            </Link>
-          </li>
-          <li>
-            <Link href="/bullseye" className={`nav-link ${isActive('/bullseye') ? 'active' : ''}`} onClick={closeNav}>
-              Bullseye Game
-            </Link>
-          </li>
-          <li>
-            <Link href="/shop" className={`nav-link ${isActive('/shop') ? 'active' : ''}`} onClick={closeNav}>
-              Shop
-            </Link>
-          </li>
-          <li>
-            <Link href="/dart-swap" className={`nav-link ${isActive('/dart-swap') ? 'active' : ''}`} onClick={closeNav}>
-              Dart Swap
-            </Link>
-          </li>
+          <img src="/logo.jpeg" alt="Big Fish Darts" className="navbar-logo-image" />
+          <span className="navbar-logo-text">Big Fish Darts</span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <ul className="navbar-menu" aria-label="Navigation menu">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link 
+                href={link.href} 
+                className={`navbar-link ${isActive(link.href) ? 'active' : ''}`}
+                onClick={closeNav}
+              >
+                {link.label}
+                {isActive(link.href) && <span className="navbar-link-indicator" aria-hidden="true" />}
+              </Link>
+            </li>
+          ))}
         </ul>
+
+        {/* CTA Button - Desktop */}
+        <div className="navbar-cta-desktop">
+          <Link
+            href={ctaHref}
+            className="navbar-cta-button"
+            onClick={handleCtaClick}
+            aria-label={ctaLabel}
+          >
+            {ctaLabel}
+          </Link>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className={`navbar-toggle ${navOpen ? 'active' : ''}`}
+          onClick={toggleNav}
+          aria-label={navOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={navOpen}
+          aria-controls="mobile-menu"
+        >
+          <span className="navbar-toggle-line" />
+          <span className="navbar-toggle-line" />
+          <span className="navbar-toggle-line" />
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div 
+        id="mobile-menu"
+        className={`navbar-mobile-menu ${navOpen ? 'active' : ''}`}
+        aria-hidden={!navOpen}
+      >
+        <ul className="navbar-mobile-menu-list">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link 
+                href={link.href} 
+                className={`navbar-mobile-link ${isActive(link.href) ? 'active' : ''}`}
+                onClick={closeNav}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        
+        {/* CTA Button - Mobile */}
+        <div className="navbar-cta-mobile">
+          <Link
+            href={ctaHref}
+            className="navbar-cta-button"
+            onClick={handleCtaClick}
+          >
+            {ctaLabel}
+          </Link>
+        </div>
       </div>
-    </nav>
+
+      {/* Mobile Menu Overlay */}
+      {navOpen && (
+        <div 
+          className="navbar-overlay"
+          onClick={closeNav}
+          aria-hidden="true"
+        />
+      )}
+    </header>
   )
 }
-
