@@ -25,10 +25,10 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <div className="nav-container">
-        <div className="nav-logo">
+        <Link href="/" className="nav-logo">
           <img src="/logo.jpeg" alt="Big Fish Darts" className="logo-image" />
           <span className="logo-text">Big Fish Darts</span>
-        </div>
+        </Link>
         <button 
           className={`nav-toggle ${navOpen ? 'active' : ''}`} 
           onClick={toggleNav} 
@@ -65,6 +65,21 @@ export default function Navbar() {
           <li>
             <Link href="/coaching" className={`nav-link ${isActive('/coaching') ? 'active' : ''}`} onClick={closeNav}>
               Coaching
+            </Link>
+          </li>
+          <li>
+            <Link href="/bullseye" className={`nav-link ${isActive('/bullseye') ? 'active' : ''}`} onClick={closeNav}>
+              Bullseye Game
+            </Link>
+          </li>
+          <li>
+            <Link href="/shop" className={`nav-link ${isActive('/shop') ? 'active' : ''}`} onClick={closeNav}>
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link href="/dart-swap" className={`nav-link ${isActive('/dart-swap') ? 'active' : ''}`} onClick={closeNav}>
+              Dart Swap
             </Link>
           </li>
         </ul>

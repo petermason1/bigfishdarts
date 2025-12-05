@@ -1,9 +1,22 @@
-/* Union Jack Color Scheme */
+/* Professional Color Scheme - Matching Logo */
 :root {
-    --union-red: #DC143C;
-    --union-blue: #003082;
-    --union-white: #FFFFFF;
-    --union-dark-blue: #001F5C;
+    --primary-red: #DC143C;
+    --primary-blue: #003082;
+    --primary-white: #FFFFFF;
+    --dark-blue: #001F5C;
+    --accent-gold: #D4AF37;
+    --accent-amber: #FFB347;
+    --dark-bg: #0A0E27;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-light: rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.7);
+    
+    /* Legacy support */
+    --union-red: var(--primary-red);
+    --union-blue: var(--primary-blue);
+    --union-white: var(--primary-white);
+    --union-dark-blue: var(--dark-blue);
 }
 
 * {
@@ -14,11 +27,22 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, var(--union-dark-blue) 0%, var(--union-blue) 50%, var(--union-dark-blue) 100%);
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-blue) 30%, var(--primary-blue) 60%, var(--dark-bg) 100%);
+    background-attachment: fixed;
     min-height: 100vh;
-    color: var(--union-white);
+    color: var(--text-light);
     font-size: 16px;
     line-height: 1.6;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 /* Typography Hierarchy */
@@ -52,25 +76,42 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Navigation - Clean Professional Style */
+/* Navigation - Professional Style with Animations */
 .nav {
     background: linear-gradient(135deg, 
-        var(--union-red) 0%, 
-        rgba(200, 20, 50, 0.95) 50%,
-        var(--union-red) 100%
+        rgba(220, 20, 60, 0.95) 0%, 
+        rgba(0, 48, 130, 0.9) 50%,
+        rgba(220, 20, 60, 0.95) 100%
     );
-    backdrop-filter: blur(8px);
-    padding: 1.2rem 0;
+    backdrop-filter: blur(12px) saturate(180%);
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 
-        0 2px 10px rgba(0,0,0,0.3),
-        0 0 0 1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border-top: 2px solid rgba(139, 115, 85, 0.6);
-    border-bottom: 2px solid rgba(139, 115, 85, 0.6);
+        0 4px 20px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
     position: relative;
+    animation: navGlow 3s ease-in-out infinite;
+}
+
+@keyframes navGlow {
+    0%, 100% {
+        box-shadow: 
+            0 4px 20px rgba(0,0,0,0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 4px 30px rgba(220, 20, 60, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
 }
 
 /* Subtle border accent */
@@ -140,70 +181,89 @@ p {
 .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--union-white);
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.8),
-        0 0 8px rgba(220, 20, 60, 0.4),
-        -1px -1px 2px rgba(0, 0, 0, 0.5);
+    color: var(--primary-white);
+    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     position: relative;
-    transition: transform 0.3s ease;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     box-shadow: 
-        inset 0 1px 2px rgba(255, 255, 255, 0.1),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.3);
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .nav-logo:hover {
-    transform: translateX(3px);
-    text-shadow: 
-        2px 2px 6px rgba(0,0,0,0.9),
-        0 0 12px rgba(220, 20, 60, 0.6),
-        -1px -1px 3px rgba(0, 0, 0, 0.6);
-    background: rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
     box-shadow: 
-        inset 0 1px 3px rgba(255, 255, 255, 0.15),
-        inset 0 -1px 3px rgba(0, 0, 0, 0.4),
-        0 3px 6px rgba(0, 0, 0, 0.4);
+        0 4px 16px rgba(220, 20, 60, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .logo-image {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 6px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
-    transition: all 0.3s ease;
-    border: 2px solid rgba(139, 115, 85, 0.6);
-    padding: 3px;
-    background: rgba(0, 0, 0, 0.3);
+    height: 56px;
+    width: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 
-        inset 0 1px 2px rgba(255, 255, 255, 0.2),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.4),
-        0 2px 4px rgba(0, 0, 0, 0.4);
+        0 0 0 2px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
 }
 
 .logo-image:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.7));
-    border-color: rgba(212, 184, 150, 0.8);
+    transform: translateY(-2px) scale(1.05);
+    filter: drop-shadow(0 6px 12px rgba(220, 20, 60, 0.5));
+    border-color: rgba(212, 175, 55, 0.6);
     box-shadow: 
-        inset 0 1px 3px rgba(255, 255, 255, 0.3),
-        inset 0 -1px 3px rgba(0, 0, 0, 0.5),
-        0 3px 6px rgba(0, 0, 0, 0.5);
+        0 0 0 2px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(220, 20, 60, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .logo-text {
     display: inline-block;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     white-space: nowrap;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(220, 20, 60, 0.3);
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, var(--primary-white) 0%, rgba(212, 175, 55, 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-logo:hover .logo-text {
+    text-shadow: 
+        2px 2px 6px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(220, 20, 60, 0.5);
+    background: linear-gradient(135deg, var(--primary-white) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Mobile: show hamburger, hide menu by default */
@@ -1047,12 +1107,24 @@ header h1 {
 /* Sign-up Page Styles */
 .signup-hero {
     text-align: center;
-    padding: 3rem 2rem;
-    margin: 0 auto 3rem;
+    padding: 4rem 2rem;
+    margin: 0 auto 4rem;
     width: 100%;
     max-width: 1000px;
     box-sizing: border-box;
     position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 640px) {
@@ -1062,31 +1134,75 @@ header h1 {
 }
 
 .hero-logo-container {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeInScale 1s ease-out 0.2s both;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .hero-logo {
-    max-width: 250px;
-    max-height: 400px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 16px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(220, 20, 60, 0.3);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-    padding: 1.5rem;
-    backdrop-filter: blur(15px);
-    border: 4px solid var(--union-red);
-    animation: logoFloat 3s ease-in-out infinite;
-    transition: all 0.3s ease;
+    max-width: 280px;
+    max-height: 280px;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(220, 20, 60, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    padding: 8px;
+    backdrop-filter: blur(20px);
+    border: 4px solid rgba(212, 175, 55, 0.5);
+    animation: logoFloat 4s ease-in-out infinite;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.hero-logo::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-gold), var(--primary-blue));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .hero-logo:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(220, 20, 60, 0.5);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 
+        0 25px 70px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(220, 20, 60, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    border-color: rgba(212, 175, 55, 0.8);
 }
 
 @keyframes logoFloat {
@@ -1094,22 +1210,26 @@ header h1 {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px);
     }
 }
 
 .signup-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    background: linear-gradient(135deg, var(--union-white), var(--union-red));
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 
+        2px 2px 8px rgba(0,0,0,0.5),
+        0 0 20px rgba(220, 20, 60, 0.3);
+    background: linear-gradient(135deg, var(--primary-white) 0%, var(--accent-gold) 50%, var(--primary-red) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    animation: fadeInUp 1s ease-out 0.4s both;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .signup-title::before {
@@ -1117,28 +1237,72 @@ header h1 {
 }
 
 .signup-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     opacity: 0.95;
-    color: var(--union-white);
-    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    animation: fadeInUp 1s ease-out 0.6s both;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .coming-soon-badge {
     display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: var(--union-red);
-    color: var(--union-white);
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, var(--primary-red) 0%, rgba(220, 20, 60, 0.9) 100%);
+    color: var(--primary-white);
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    border: 2px solid var(--union-blue);
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    box-shadow: 
+        0 4px 20px rgba(220, 20, 60, 0.5),
+        0 0 30px rgba(220, 20, 60, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out 0.8s both, pulse 2s ease-in-out infinite 1.5s;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 4px 20px rgba(220, 20, 60, 0.5),
+            0 0 30px rgba(220, 20, 60, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 
+            0 6px 30px rgba(220, 20, 60, 0.7),
+            0 0 50px rgba(220, 20, 60, 0.5);
+    }
 }
 
 .signup-section {
@@ -1150,18 +1314,33 @@ header h1 {
 }
 
 .signup-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border: 2px solid var(--union-red);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 24px;
+    padding: 3.5rem;
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(212, 175, 55, 0.3);
     max-width: 650px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    animation: fadeInUp 1s ease-out 1s both;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.signup-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 25px 70px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(220, 20, 60, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
 }
 
 .signup-card::before {
