@@ -976,6 +976,16 @@ p {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
+
+    .home-steps-grid,
+    .home-benefits-grid,
+    .home-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-testimonials-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Hero Section */
@@ -1112,12 +1122,24 @@ p {
     transform: translateY(-2px);
 }
 
-/* Steps Grid */
+/* Steps Grid - 4 items: 2x2 on tablet, 4x1 on desktop */
 .home-steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+    .home-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .home-step-card {
@@ -1162,12 +1184,24 @@ p {
     line-height: 1.6;
 }
 
-/* Benefits Grid */
+/* Benefits Grid - 4 items: 2x2 on tablet, 4x1 on desktop */
 .home-benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+    .home-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .home-benefit-card {
@@ -1216,12 +1250,24 @@ p {
     letter-spacing: 0.5px;
 }
 
-/* Features Grid */
+/* Features Grid - 4 items: 2x2 on tablet, 4x1 on desktop */
 .home-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+    .home-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .home-feature-card {
@@ -1272,12 +1318,24 @@ p {
     font-weight: 700;
 }
 
-/* Testimonials */
+/* Testimonials - 3 items: 1x3 on mobile, 3x1 on desktop (no orphans) */
 .home-testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
+}
+
+@media (min-width: 640px) {
+    .home-testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .home-testimonial-card {

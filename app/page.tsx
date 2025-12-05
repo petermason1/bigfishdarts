@@ -74,7 +74,7 @@ export default function Home() {
               Join competitive darts leagues, anywhere in the UK
             </h1>
             <p className="home-hero-subtitle">
-              For players: Find tournaments, track your scores, and compete with others. 
+              For players: Find tournaments, track live scores, and compete with others. 
               For venues: Host unforgettable darts events that engage customers and boost revenue.
             </p>
             <div className="home-hero-cta">
@@ -241,19 +241,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Mid-Page CTA */}
-          <section className="home-section">
-            <div className="home-section-content">
-              <div className="home-cta-card">
-                <h2>Ready to get started?</h2>
-                <p>Join thousands of players and venues already part of the Big Fish Darts community.</p>
-                <Link href="#signup" className="home-cta-primary">
-                  Join the Revolution
-                </Link>
-              </div>
-            </div>
-          </section>
-
           {/* FAQ Section */}
           <section className="home-section home-section-alt">
             <div className="home-section-content">
@@ -279,8 +266,8 @@ export default function Home() {
               </div>
               <div className="home-faq-cta">
                 <p>Still have questions?</p>
-                <Link href="#signup" className="home-cta-secondary">
-                  Contact us
+                <Link href="#signup" className="home-cta-primary">
+                  Get the app
                 </Link>
               </div>
             </div>
