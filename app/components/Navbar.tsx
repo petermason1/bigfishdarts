@@ -21,7 +21,6 @@ const defaultLinks: NavLink[] = [
   { href: '/demo', label: 'Demo' },
   { href: '/sales', label: 'Pricing' },
   { href: '/comp', label: 'Competition' },
-  { href: '/coaching', label: 'Coaching' },
   { href: '/bullseye', label: 'Bullseye Game' },
   { href: '/shop', label: 'Shop' },
   { href: '/dart-swap', label: 'Dart Swap' },
