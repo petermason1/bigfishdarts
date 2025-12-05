@@ -177,7 +177,7 @@ export default function BullseyePage() {
 
   const generateQuestion = (): Question => {
     const categories = Object.keys(questionCategories) as Array<keyof typeof questionCategories>
-    const category = selectedCategory || categories[Math.floor(Math.random() * categories.length)]
+    const category: keyof typeof questionCategories = (selectedCategory as keyof typeof questionCategories) || categories[Math.floor(Math.random() * categories.length)]
     const questions = questionCategories[category]
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)]
     return {
